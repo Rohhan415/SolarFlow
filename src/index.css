@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --lightest-green: #d9ed92;
+  --light-green: #b5e48c;
+  --pale-green: #99d98c;
+  --medium-green: #76c893;
+  --strong-green: #52b69a;
+  --teal: #34a0a4;
+  --deep-blue: #168aad;
+  --darker-blue: #1a759f;
+  --dark-blue: #1e6091;
+  --navy-blue: #184e77;
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "overrides": [
+    {
+      "files": ["vitest.config.ts"]
+    }
+  ],
+  "ignorePatterns": ["!vitest.config.ts"]
+}

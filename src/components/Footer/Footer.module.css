@@ -1,0 +1,31 @@
+.footer {
+  background-color: var(--navy-blue);
+  padding: 12.8rem;
+  margin: 0 auto;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-top: 5rem;
+  border-top: 1px solid var(--strong-green);
+}
+
+.footerHeading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.footerFeatured {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  max-width: 120rem;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  padding-bottom: 5rem;
+}
