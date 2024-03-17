@@ -36,7 +36,7 @@ export default function StartingPageSlider() {
         }}
       >
         <div className="flex items-center justify-center h-full text-9xl ">
-          Dawid to HUI
+          XXXXXXX
         </div>
       </Slide>
 
@@ -50,7 +50,7 @@ export default function StartingPageSlider() {
         }}
       >
         <div className="flex items-center justify-center h-full text-9xl ">
-          Dawid to HUI
+          XXXXXXXXXXX
         </div>
       </Slide>
 
@@ -64,7 +64,7 @@ export default function StartingPageSlider() {
         }}
       >
         <div className="flex items-center justify-center h-full text-9xl ">
-          Dawid to HUI
+          XXXXXXXX
         </div>
       </Slide>
     </HeroSlider>
