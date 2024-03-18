@@ -19,7 +19,7 @@ function StartingLoadingScreen() {
         >
           <PropagateLoader
             size={15}
-            color="#76C893"
+            color="#83c341"
             aria-label="Loading Spinner"
             data-testid="loader"
           />
@@ -31,7 +31,7 @@ function StartingLoadingScreen() {
         >
           <PropagateLoader
             size={15}
-            color="#76C893"
+            color="#83c341"
             aria-label="Loading Spinner"
             data-testid="loader"
           />
