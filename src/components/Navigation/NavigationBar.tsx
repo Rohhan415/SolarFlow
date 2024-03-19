@@ -76,13 +76,16 @@ function NavigationBar() {
             }`}
           >
             <li className={styles.navButton}>
-              <NavLink to="/">Start</NavLink>
+              <NavLink to="/">Strona Główna</NavLink>
             </li>
             <li className={styles.navButton}>
               <NavLink to="/contact">Kontakt</NavLink>
             </li>
             <li className={styles.navButton}>
-              <NavLink to="*">strona z ofertą??</NavLink>
+              <NavLink to="*">O nas</NavLink>
+            </li>
+            <li className={styles.navButton}>
+              <NavLink to="*">Oferta</NavLink>
             </li>
           </ul>
         </div>

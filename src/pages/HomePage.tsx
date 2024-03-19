@@ -21,10 +21,14 @@ function Homepage() {
     <>
       <StartingLoadingScreen />
       <NavigationBar />
-      {showSection && <StartingPageSlider />}
-      <AboutUs />
-      <ThreeStepsSection />
-      <Footer />
+      {showSection && (
+        <>
+          <StartingPageSlider />
+          <AboutUs />
+          <ThreeStepsSection />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -35,7 +35,7 @@ export default function StartingPageSlider() {
           backgroundAnimationDuration: "3500",
         }}
       >
-        <div className="flex items-center justify-center h-full text-9xl ">
+        <div className="flex items-center justify-center h-full text-white text-9xl ">
           XXXXXXX
         </div>
       </Slide>
@@ -49,21 +49,21 @@ export default function StartingPageSlider() {
           backgroundAnimationDuration: "3500",
         }}
       >
-        <div className="flex items-center justify-center h-full text-9xl ">
+        <div className="flex items-center justify-center h-full text-white text-9xl ">
           XXXXXXXXXXX
         </div>
       </Slide>
 
       <Slide
         background={{
-          backgroundColor: "rgba(0,0,0,0.3)",
+          backgroundColor: "rgba(0,0,0,0.1)",
           backgroundImageBlendMode: "color",
           backgroundImageSrc: img3,
           backgroundAnimation: "zoom",
           backgroundAnimationDuration: "3500",
         }}
       >
-        <div className="flex items-center justify-center h-full text-9xl ">
+        <div className="flex items-center justify-center h-full text-white text-9xl ">
           XXXXXXXX
         </div>
       </Slide>

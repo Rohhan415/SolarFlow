@@ -1,26 +1,26 @@
-.PageNotFoundContainer {
+.PageNotFound {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 3rem;
   font-weight: bold;
   color: #a3a3a3;
+  background-image: url("../../assets/image3.jpg");
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
-  background-image: url("ścieżka/do/tła/PageNotFound.jpg");
+  background-position: center;
 }
 
-.PageNotFoundContainer h2 {
-  font-size: 14.75rem;
-  height: 66px;
+.PageNotFound404 {
+  font-size: 25rem;
 }
 
-.PageNotFoundContainer .startButton {
+.PageNotFoundBackButton {
   display: inline-block;
-  padding: 12px 24px;
-  font-family: sans-serif;
-  font-size: 2xl;
+  padding: 1.5rem 6rem;
+  font-size: 2.2rem;
   font-weight: bold;
   transition: all 300ms;
   border: none;
@@ -31,6 +31,6 @@
   color: white;
 }
 
-.PageNotFoundContainer .startButton:hover {
-  background-color: #52b69a;
+.PageNotFoundBackButton:hover {
+  background-color: var(--pale-green);
 }

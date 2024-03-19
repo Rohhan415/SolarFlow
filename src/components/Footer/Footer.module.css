@@ -5,7 +5,7 @@
   color: white;
 }
 
-.container {
+.footerInformation {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 4rem;
@@ -23,9 +23,20 @@
 .footerFeatured {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  place-items: center;
   max-width: 120rem;
   margin: 0 auto;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding-bottom: 5rem;
+}
+
+.footerHighlight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footerHighlightIcons {
+  background-color: var(--pale-green);
+  border-radius: 50%;
+  padding: 0.6rem;
 }
