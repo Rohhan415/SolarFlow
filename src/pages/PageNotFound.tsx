@@ -1,17 +1,9 @@
 import PageNotFoundSection from "../components/PageNotFoundSection/PageNotFoundSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
-import { useState, useEffect } from "react";
+import useTimer from "../hooks/useTimer";
 
 function PageNotFound() {
-  const [showSection, setShowSection] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowSection(true);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const showSection = useTimer({ delay: 500 });
 
   return (
     <>
