@@ -20,7 +20,7 @@ function FooterFeatured() {
             />
           </svg>
         </div>
-        aleja 2/7 , 39-300 Mielec
+        Henryka Sienkiewicza 85/87, 90-057 Łódź
       </p>
       <p className={`${styles.footerHighlight}`}>
         <div className={`${styles.footerHighlightIcons}`}>
@@ -39,7 +39,7 @@ function FooterFeatured() {
             />
           </svg>
         </div>
-        +48 999 999 999 lub +48 999 999 999
+        +48 510 266 548 lub +48 518 747 979
       </p>
       <p className={`${styles.footerHighlight}`}>
         <div className={`${styles.footerHighlightIcons}`}>
@@ -58,7 +58,7 @@ function FooterFeatured() {
             />
           </svg>
         </div>
-        Dawid@email.pl
+        solar1flow@gmail.com
       </p>
     </div>
   );

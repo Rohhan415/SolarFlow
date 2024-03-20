@@ -16,22 +16,19 @@ function FooterInformation() {
       <div>
         <p className={`${styles.footerHeading}`}>Adres</p>
         <address>
-          <p>Address: 623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
-          <p>Nip: xxx-xxx-xx-xx</p>
-          <p>Regon: xxxxxx</p>
+          <p>Henryka Sienkiewicza 85/87, 90-057 Łódź</p>
+          <p>NIP: 3894501070</p>
         </address>
       </div>
       <nav>
         <p>Kontakt</p>
-        <p>biuro@adres.pl</p>
+        <p>solar1flow@gmail.com</p>
         <p>
-          Olaf: <a href="tel+48 999 999 999"></a>
+          Olaf: <a href="tel+48  518 747 979"> 518 747 979</a>
         </p>
-        <p>Olaf@email.pl</p>
         <p>
-          Dawid: <a href="tel+48 999 999 999"></a>
+          Dawid: <a href="tel+48 510 266 548">510 266 548</a>
         </p>
-        <p>Dawid@email.pl</p>
       </nav>
     </div>
   );
