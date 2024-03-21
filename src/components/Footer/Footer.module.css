@@ -15,11 +15,38 @@
   border-top: 1px solid var(--pale-green);
 }
 
-.footerHeading {
+.footerInformationHeading {
+  position: relative;
   font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
 }
+
+/* PseudoElements  for bottom border */
+.footerInformationHeading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 95%;
+  width: 5%;
+  height: 2px;
+  background-color: var(--pale-green);
+  opacity: 0.8;
+}
+
+.footerInformationHeading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 14%;
+  height: 2px;
+  background-color: var(--pale-green);
+  opacity: 0.8;
+}
+
 .footerFeatured {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,4 +66,30 @@
   background-color: var(--pale-green);
   border-radius: 50%;
   padding: 0.6rem;
+}
+
+.footerInformationList {
+  font-size: 1.6rem;
+}
+
+.footerInformationList li::before {
+  content: "-"; /* Ustawiaj myslnik jako treść przed każdym elementem listy */
+  margin-right: 1rem;
+  font-size: 2.2rem;
+}
+
+.footerInformationListButton a:hover {
+  color: var(--pale-green);
+  transition: ease-out 0.3s color;
+}
+
+.footerInformationAddressHeader {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.footerInformationAddressList {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

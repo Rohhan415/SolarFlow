@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 function FooterFeatured() {
   return (
     <div className={`${styles.footerFeatured}`}>
-      <p className={`${styles.footerHighlight}`}>
+      <div className={`${styles.footerHighlight}`}>
         <div className={`${styles.footerHighlightIcons}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +21,8 @@ function FooterFeatured() {
           </svg>
         </div>
         Henryka Sienkiewicza 85/87, 90-057 Łódź
-      </p>
-      <p className={`${styles.footerHighlight}`}>
+      </div>
+      <div className={`${styles.footerHighlight}`}>
         <div className={`${styles.footerHighlightIcons}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,8 @@ function FooterFeatured() {
           </svg>
         </div>
         +48 510 266 548 lub +48 518 747 979
-      </p>
-      <p className={`${styles.footerHighlight}`}>
+      </div>
+      <div className={`${styles.footerHighlight}`}>
         <div className={`${styles.footerHighlightIcons}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ function FooterFeatured() {
           </svg>
         </div>
         solar1flow@gmail.com
-      </p>
+      </div>
     </div>
   );
 }

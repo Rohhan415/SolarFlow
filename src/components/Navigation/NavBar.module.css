@@ -10,6 +10,7 @@
   width: 100%;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
 }
 
 .navigationBar,
@@ -62,7 +63,7 @@
 }
 
 .NavList {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   display: flex;
   gap: 2rem;
   justify-content: center;
@@ -139,8 +140,6 @@
     gap: 5rem;
     width: 40%;
     height: 100%;
-
-    font-size: 2.4rem;
     transition: all 0.3s ease-in-out;
   }
 

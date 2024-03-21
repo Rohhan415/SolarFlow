@@ -1,27 +1,52 @@
 import styles from "./Footer.module.css";
 import Logo from "../../assets/logo-no-background.png";
+import { NavLink } from "react-router-dom";
 
 function FooterInformation() {
   return (
     <div className={`${styles.footerInformation}`}>
-      <img src={Logo} className={styles.navTitle} alt="Logo Firmy" />
+      <img
+        loading="lazy"
+        src={Logo}
+        alt="Logo Firmy"
+        title="solarflow_logo_small"
+      />
       <nav>
-        <p>Przydatne Linki</p>
-        <ul>
-          <li>Strona Główna</li>
-          <li>Kontakt</li>
-          <li>Oferta</li>
+        <p className={`${styles.footerInformationHeading}`}>Przydatne Linki</p>
+        <ul className={`${styles.footerInformationList}`}>
+          <li className={`${styles.footerInformationListButton}`}>
+            <NavLink to="/">Strona Główna</NavLink>
+          </li>
+          <li className={`${styles.footerInformationListButton}`}>
+            <NavLink to="/contact">Kontakt</NavLink>
+          </li>
+          <li className={`${styles.footerInformationListButton}`}>
+            <NavLink to="*">O nas</NavLink>
+          </li>
+          <li className={`${styles.footerInformationListButton}`}>
+            <NavLink to="*">Oferta</NavLink>
+          </li>
         </ul>
       </nav>
-      <div>
-        <p className={`${styles.footerHeading}`}>Adres</p>
-        <address>
-          <p>Henryka Sienkiewicza 85/87, 90-057 Łódź</p>
+      <div className={`${styles.footerInformationAddress}`}>
+        <p className={`${styles.footerInformationHeading}`}>Adres</p>
+        <h3 className={`${styles.footerInformationAddressHeader}`}>
+          SolarFlow
+        </h3>
+        <address
+          itemType="http://schema.org/PostalAddress"
+          className={`${styles.footerInformationAddressList}`}
+        >
+          <p>Henryka Sienkiewicza 85/87</p>
+          <p>
+            <span itemProp="postalCode">90-057</span>{" "}
+            <span itemProp="addressLocality">Łódź</span>
+          </p>
           <p>NIP: 3894501070</p>
         </address>
       </div>
       <nav>
-        <p>Kontakt</p>
+        <p className={`${styles.footerInformationHeading}`}>Kontakt</p>
         <p>solar1flow@gmail.com</p>
         <p>
           Olaf: <a href="tel+48  518 747 979"> 518 747 979</a>
