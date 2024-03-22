@@ -47,13 +47,34 @@ function FooterInformation() {
       </div>
       <nav>
         <p className={`${styles.footerInformationHeading}`}>Kontakt</p>
-        <p>solar1flow@gmail.com</p>
-        <p>
-          Olaf: <a href="tel+48  518 747 979"> 518 747 979</a>
-        </p>
-        <p>
-          Dawid: <a href="tel+48 510 266 548">510 266 548</a>
-        </p>
+        <div className={`${styles.footerInformationContactList}`}>
+          <a
+            className={`${styles.footerInformationContactListBold}`}
+            href="mailto:solar1flow@gmail.com"
+          >
+            solar1flow@gmail.com
+          </a>
+          <p>
+            <span>Olaf:</span>
+            <a
+              className={`${styles.footerInformationContactListGreenText}`}
+              href="tel:+48 518 747 979"
+            >
+              {" "}
+              518 747 979
+            </a>
+          </p>
+          <p>
+            <span>Dawid:</span>
+            <a
+              className={`${styles.footerInformationContactListGreenText}`}
+              href="tel:+48 510 266 548"
+            >
+              {" "}
+              510 266 548
+            </a>
+          </p>
+        </div>
       </nav>
     </div>
   );
