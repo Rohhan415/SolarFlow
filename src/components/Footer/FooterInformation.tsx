@@ -42,7 +42,7 @@ function FooterInformation() {
             <span itemProp="postalCode">90-057</span>{" "}
             <span itemProp="addressLocality">Łódź</span>
           </p>
-          <p>NIP: 3894501070</p>
+          <p>NIP: 389450-10-70</p>
         </address>
       </div>
       <nav>
