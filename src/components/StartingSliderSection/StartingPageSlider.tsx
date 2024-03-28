@@ -3,7 +3,7 @@ import HeroSlider, { Slide, Nav, SideNav, AutoplayButton } from "hero-slider";
 
 import img1 from "../../assets/image1.jpg";
 import img2 from "../../assets/image2.jpg";
-import img3 from "../../assets/image3.jpg";
+import img8 from "../../assets/image8.jpg";
 
 export default function StartingPageSlider() {
   return (
@@ -56,9 +56,9 @@ export default function StartingPageSlider() {
 
       <Slide
         background={{
-          backgroundColor: "rgba(0,0,0,0.1)",
+          backgroundColor: "rgba(0,0,0,0.3)",
           backgroundImageBlendMode: "color",
-          backgroundImageSrc: img3,
+          backgroundImageSrc: img8,
           backgroundAnimation: "zoom",
           backgroundAnimationDuration: "3500",
         }}
