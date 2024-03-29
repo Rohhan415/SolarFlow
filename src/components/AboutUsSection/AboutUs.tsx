@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 function AboutUs() {
   return (
-    <div className={`${styles.container}`}>
+    <section className={`${styles.container}`}>
       <div className={`${styles.aboutUs}`}>
         <div className={`${styles.aboutUsColumnComposition}`}>
           <img
@@ -60,7 +60,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

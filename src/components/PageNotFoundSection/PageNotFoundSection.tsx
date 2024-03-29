@@ -6,9 +6,9 @@ function PageNotFound() {
     <>
       <div className={`${styles.PageNotFound}`}>
         <h2 className={`${styles.PageNotFound404}`}>404</h2>
-        <div className={`${styles.PageNotFoundBackButton}`}>
-          <NavLink to="/">Start</NavLink>
-        </div>
+        <NavLink className={`${styles.PageNotFoundBackButton}`} to="/">
+          Start
+        </NavLink>
       </div>
     </>
   );

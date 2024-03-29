@@ -7,66 +7,68 @@ import img8 from "../../assets/image8.jpg";
 
 export default function StartingPageSlider() {
   return (
-    <HeroSlider
-      animations={{ slidingAnimation: "fade" }}
-      autoplay={{ autoplayDuration: 6000 }}
-      height={"100vh"}
-      style={{ backgroundColor: "#ffffff" }}
-      accessibility={{
-        shouldDisplayButtons: false,
-      }}
-      controller={{
-        initialSlide: 1,
-        slidingDuration: 400,
-        slidingDelay: 100,
-      }}
-    >
-      <Nav />
-      <SideNav />
-      <SideNav isPositionedRight={false} />
-      <AutoplayButton />
-
-      <Slide
-        background={{
-          backgroundColor: "rgba(0,0,0,0.3)",
-          backgroundImageBlendMode: "color",
-          backgroundImageSrc: img1,
-          backgroundAnimation: "zoom",
-          backgroundAnimationDuration: "3500",
+    <section>
+      <HeroSlider
+        animations={{ slidingAnimation: "fade" }}
+        autoplay={{ autoplayDuration: 6000 }}
+        height={"100vh"}
+        style={{ backgroundColor: "#eee" }}
+        accessibility={{
+          shouldDisplayButtons: false,
+        }}
+        controller={{
+          initialSlide: 1,
+          slidingDuration: 400,
+          slidingDelay: 100,
         }}
       >
-        <div className="flex items-center justify-center h-full text-white text-9xl ">
-          XXXXXXX
-        </div>
-      </Slide>
+        <Nav />
+        <SideNav />
+        <SideNav isPositionedRight={false} />
+        <AutoplayButton style={{ color: "#eee" }} />
 
-      <Slide
-        background={{
-          backgroundColor: "rgba(0,0,0,0.3)",
-          backgroundImageBlendMode: "color",
-          backgroundImageSrc: img2,
-          backgroundAnimation: "zoom",
-          backgroundAnimationDuration: "3500",
-        }}
-      >
-        <div className="flex items-center justify-center h-full text-white text-9xl ">
-          XXXXXXXXXXX
-        </div>
-      </Slide>
+        <Slide
+          background={{
+            backgroundColor: "rgba(0,0,0,0.3)",
+            backgroundImageBlendMode: "color",
+            backgroundImageSrc: img1,
+            backgroundAnimation: "zoom",
+            backgroundAnimationDuration: "3500",
+          }}
+        >
+          <div className="flex items-center justify-center h-full text-white text-9xl ">
+            XXXXXXX
+          </div>
+        </Slide>
 
-      <Slide
-        background={{
-          backgroundColor: "rgba(0,0,0,0.3)",
-          backgroundImageBlendMode: "color",
-          backgroundImageSrc: img8,
-          backgroundAnimation: "zoom",
-          backgroundAnimationDuration: "3500",
-        }}
-      >
-        <div className="flex items-center justify-center h-full text-white text-9xl ">
-          XXXXXXXX
-        </div>
-      </Slide>
-    </HeroSlider>
+        <Slide
+          background={{
+            backgroundColor: "rgba(0,0,0,0.3)",
+            backgroundImageBlendMode: "color",
+            backgroundImageSrc: img2,
+            backgroundAnimation: "zoom",
+            backgroundAnimationDuration: "3500",
+          }}
+        >
+          <div className="flex items-center justify-center h-full text-white text-9xl ">
+            XXXXXXXXXXX
+          </div>
+        </Slide>
+
+        <Slide
+          background={{
+            backgroundColor: "rgba(0,0,0,0.3)",
+            backgroundImageBlendMode: "color",
+            backgroundImageSrc: img8,
+            backgroundAnimation: "zoom",
+            backgroundAnimationDuration: "3500",
+          }}
+        >
+          <div className="flex items-center justify-center h-full text-white text-9xl ">
+            XXXXXXXX
+          </div>
+        </Slide>
+      </HeroSlider>
+    </section>
   );
 }

@@ -1,8 +1,8 @@
 function ThreeStepsSection() {
   return (
-    <div className="w-full h-96 ">
+    <section className="w-full h-96 ">
       TUTAJ SEKCJA O KROKACH PRZEPROWADZENIA INSTALACJI
-    </div>
+    </section>
   );
 }
 
