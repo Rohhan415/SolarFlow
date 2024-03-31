@@ -1,7 +1,7 @@
 import AboutUs from "../components/AboutUsSection/AboutUs";
 import NavigationBar from "../components/Navigation/NavigationBar";
 import StartingPageSlider from "../components/StartingSliderSection/StartingPageSlider";
-import ThreeStepsSection from "../components/ThreeStepsSection/ThreeStepsSection";
+import InstallationStepsSection from "../components/InstallationStepsSection/InstallationStepsSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import Footer from "../components/Footer/Footer";
 import useTimer from "../hooks/useTimer";
@@ -17,7 +17,7 @@ function Homepage() {
         <>
           <StartingPageSlider />
           <AboutUs />
-          <ThreeStepsSection />
+          <InstallationStepsSection />
           <Footer />
         </>
       )}
