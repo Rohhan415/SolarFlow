@@ -6,7 +6,7 @@ function StepArrow() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-24 h-24"
+      className="w-40 h-24 m-auto"
     >
       <path
         strokeLinecap="round"

@@ -20,7 +20,7 @@ const StepsDescription: React.FC<StepsDescriptionProps> = ({
         </h6>
       </div>
       <h4 className={`${styles.moduleHeader}`}>{title}</h4>
-      <p>{description}</p>
+      <p className={`${styles.StepNumbersParagraph}`}>{description}</p>
     </div>
   );
 };
