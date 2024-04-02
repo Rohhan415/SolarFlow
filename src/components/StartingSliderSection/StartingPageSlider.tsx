@@ -10,7 +10,7 @@ export default function StartingPageSlider() {
     <section>
       <HeroSlider
         animations={{ slidingAnimation: "fade" }}
-        // autoplay={{ autoplayDuration: 6000 }}
+        autoplay={{ autoplayDuration: 6000 }}
         height={"100vh"}
         style={{ backgroundColor: "#eee" }}
         accessibility={{
