@@ -1,6 +1,6 @@
 import styles from "./AboutUsSection.module.css";
-import image4 from "../../assets/image4.jpg";
-import image9 from "../../assets/image9.jpg";
+import image4 from "../../../assets/image4.jpg";
+import image9 from "../../../assets/image9.jpg";
 import { NavLink } from "react-router-dom";
 
 function AboutUsImages() {

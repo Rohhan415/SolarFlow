@@ -1,8 +1,8 @@
-import BackgroundTop from "../components/ContactPageSection/BackgroundTop";
-import PageNav from "../components/Navigation/NavigationBar";
+import BackgroundTop from "../components/Sections/ContactPageSection/BackgroundTop";
+import PageNav from "../components/Navigation//NavigationBar";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import useTimer from "../hooks/useTimer";
-import ContactForm from "../components/ContactPageSection/ContactForm";
+import ContactForm from "../components/Sections/ContactPageSection/ContactForm";
 import Footer from "../components/Footer/Footer";
 
 function ContactPage() {

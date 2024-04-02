@@ -1,4 +1,4 @@
-import PageNotFoundSection from "../components/PageNotFoundSection/PageNotFoundSection";
+import PageNotFoundSection from "../components/Sections/PageNotFoundSection/PageNotFoundSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import useTimer from "../hooks/useTimer";
 

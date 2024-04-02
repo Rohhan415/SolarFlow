@@ -54,7 +54,7 @@ export const NavBarProvider: FunctionComponent<NavBarProviderProps> = ({
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, [scrollWatcher.y]);
 
   return (
     <NavBarContext.Provider
