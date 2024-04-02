@@ -1,34 +1,10 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import Logo from "../../assets/logo-no-background.png";
+import { useNavBarContext } from "../../contexts/useNavBarContext";
 
 function NavigationBar() {
-  const [scrollWatcher, setScrollWatcher] = useState({ y: 0, lastY: 0 });
-  const [showNavigation, setShowNavigation] = useState(true);
-  const [activeMobileNavBar, setActiveMobileNavBar] = useState(false);
-
-  const toggleOpen = () => {
-    setActiveMobileNavBar(!activeMobileNavBar);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth > 704) {
-        setScrollWatcher((prevState) => {
-          return {
-            y: window.scrollY,
-            lastY: prevState.y,
-          };
-        });
-        setShowNavigation(window.scrollY > 1 || scrollWatcher.y > 1);
-      }
-    };
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollWatcher.y]);
+  const { showNavigation, activeMobileNavBar, toggleOpen } = useNavBarContext();
 
   return (
     <header className={styles.fixedHeader}>
