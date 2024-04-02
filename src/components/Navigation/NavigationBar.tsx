@@ -24,8 +24,6 @@ function NavigationBar() {
         setShowNavigation(window.scrollY > 1 || scrollWatcher.y > 1);
       }
     };
-
-    // Call handleScroll immediately to set initial state
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
@@ -33,7 +31,7 @@ function NavigationBar() {
   }, [scrollWatcher.y]);
 
   return (
-    <header className={`${styles.fixedHeader}`}>
+    <header className={styles.fixedHeader}>
       <div
         className={
           showNavigation ? `${styles.containerMove}` : `${styles.container} `

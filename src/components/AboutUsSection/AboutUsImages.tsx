@@ -6,14 +6,14 @@ import { NavLink } from "react-router-dom";
 function AboutUsImages() {
   return (
     <>
-      <div className={`${styles.aboutUsColumnComposition}`}>
+      <div className={styles.aboutUsColumnComposition}>
         <img
           src={image4}
           alt=""
-          className={` ${styles.aboutUsColumnCompositionImage1}`}
+          className={styles.aboutUsColumnCompositionImage1}
         />
         <NavLink
-          className={` ${styles.aboutUsColumnCompositionContact}`}
+          className={styles.aboutUsColumnCompositionContact}
           to="/contact"
         >
           Kontakt {`\u2192`}
@@ -22,7 +22,7 @@ function AboutUsImages() {
         <img
           src={image9}
           alt=""
-          className={`${styles.aboutUsColumnCompositionImage2}`}
+          className={styles.aboutUsColumnCompositionImage2}
         />
       </div>
     </>

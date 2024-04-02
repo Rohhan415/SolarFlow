@@ -5,8 +5,8 @@ import AboutUsText from "./AboutUsText";
 
 function AboutUs() {
   return (
-    <section className={`${styles.container}`}>
-      <div className={`${styles.aboutUs}`}>
+    <section className={styles.container}>
+      <div className={styles.aboutUs}>
         <AboutUsImages />
         <AboutUsText />
       </div>

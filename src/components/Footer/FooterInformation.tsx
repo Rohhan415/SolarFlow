@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function FooterInformation() {
   return (
-    <div className={`${styles.footerInformation}`}>
+    <div className={styles.footerInformation}>
       <img
         loading="lazy"
         src={Logo}
@@ -12,30 +12,28 @@ function FooterInformation() {
         title="solarflow_logo_small"
       />
       <nav>
-        <p className={`${styles.footerInformationHeading}`}>Przydatne Linki</p>
-        <ul className={`${styles.footerInformationList}`}>
-          <li className={`${styles.footerInformationListButton}`}>
+        <p className={styles.footerInformationHeading}>Przydatne Linki</p>
+        <ul className={styles.footerInformationList}>
+          <li className={styles.footerInformationListButton}>
             <NavLink to="/">Strona Główna</NavLink>
           </li>
-          <li className={`${styles.footerInformationListButton}`}>
+          <li className={styles.footerInformationListButton}>
             <NavLink to="/contact">Kontakt</NavLink>
           </li>
-          <li className={`${styles.footerInformationListButton}`}>
+          <li className={styles.footerInformationListButton}>
             <NavLink to="*">Polityka Prywatności</NavLink>
           </li>
-          <li className={`${styles.footerInformationListButton}`}>
+          <li className={styles.footerInformationListButton}>
             <NavLink to="*">Oferta</NavLink>
           </li>
         </ul>
       </nav>
-      <div className={`${styles.footerInformationAddress}`}>
-        <p className={`${styles.footerInformationHeading}`}>Adres</p>
-        <h3 className={`${styles.footerInformationAddressHeader}`}>
-          SolarFlow
-        </h3>
+      <div className={styles.footerInformationAddress}>
+        <p className={styles.footerInformationHeading}>Adres</p>
+        <h3 className={styles.footerInformationAddressHeader}>SolarFlow</h3>
         <address
           itemType="http://schema.org/PostalAddress"
-          className={`${styles.footerInformationAddressList}`}
+          className={styles.footerInformationAddressList}
         >
           <p>Henryka Sienkiewicza 85/87</p>
           <p>
@@ -46,10 +44,10 @@ function FooterInformation() {
         </address>
       </div>
       <nav>
-        <p className={`${styles.footerInformationHeading}`}>Kontakt</p>
-        <div className={`${styles.footerInformationContactList}`}>
+        <p className={styles.footerInformationHeading}>Kontakt</p>
+        <div className={styles.footerInformationContactList}>
           <a
-            className={`${styles.footerInformationContactListBold}`}
+            className={styles.footerInformationContactListBold}
             href="mailto:solar1flow@gmail.com"
           >
             solar1flow@gmail.com
@@ -57,7 +55,7 @@ function FooterInformation() {
           <p>
             <span>Olaf:</span>
             <a
-              className={`${styles.footerInformationContactListGreenText}`}
+              className={styles.footerInformationContactListGreenText}
               href="tel:+48 518 747 979"
             >
               {" "}
@@ -67,7 +65,7 @@ function FooterInformation() {
           <p>
             <span>Dawid:</span>
             <a
-              className={`${styles.footerInformationContactListGreenText}`}
+              className={styles.footerInformationContactListGreenText}
               href="tel:+48 510 266 548"
             >
               {" "}

@@ -4,7 +4,7 @@ import FooterInformation from "./FooterInformation";
 
 function Footer() {
   return (
-    <footer className={`${styles.footer}`}>
+    <footer className={styles.footer}>
       <FooterFeatured />
       <FooterInformation />
     </footer>

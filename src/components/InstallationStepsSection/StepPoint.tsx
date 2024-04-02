@@ -6,8 +6,8 @@ interface StepsDescriptionProps {
 
 const StepPoint: React.FC<StepsDescriptionProps> = ({ number }) => {
   return (
-    <div className={`${styles.installationStepNumbers}`}>
-      <h6 className={`${styles.installationStepNumbersText}`}>
+    <div className={styles.installationStepNumbers}>
+      <h6 className={styles.installationStepNumbersText}>
         Krok
         <p>{number}</p>
       </h6>

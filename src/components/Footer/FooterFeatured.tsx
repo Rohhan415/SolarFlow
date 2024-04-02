@@ -2,9 +2,9 @@ import styles from "./Footer.module.css";
 
 function FooterFeatured() {
   return (
-    <div className={`${styles.footerFeatured}`}>
-      <div className={`${styles.footerHighlight}`}>
-        <div className={`${styles.footerHighlightIcons}`}>
+    <div className={styles.footerFeatured}>
+      <div className={styles.footerHighlight}>
+        <div className={styles.footerHighlightIcons}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -22,8 +22,8 @@ function FooterFeatured() {
         </div>
         Henryka Sienkiewicza 85/87, 90-057 Łódź
       </div>
-      <div className={`${styles.footerHighlight}`}>
-        <div className={`${styles.footerHighlightIcons}`}>
+      <div className={styles.footerHighlight}>
+        <div className={styles.footerHighlightIcons}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,8 +41,8 @@ function FooterFeatured() {
         </div>
         +48 510 266 548 lub +48 518 747 979
       </div>
-      <div className={`${styles.footerHighlight}`}>
-        <div className={`${styles.footerHighlightIcons}`}>
+      <div className={styles.footerHighlight}>
+        <div className={styles.footerHighlightIcons}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

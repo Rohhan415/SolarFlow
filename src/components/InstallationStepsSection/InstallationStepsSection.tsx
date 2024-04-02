@@ -5,11 +5,11 @@ import StepsDescription from "./StepsDescription";
 
 function InstallationStepsSection() {
   return (
-    <section className={`${styles.container}`}>
-      <div className={`${styles.containerWrapper}`}>
+    <section className={styles.container}>
+      <div className={styles.containerWrapper}>
         <SectionHeader />
 
-        <div className={`${styles.installationSteps}`}>
+        <div className={styles.installationSteps}>
           <StepsDescription
             title="ZAPLANUJMY RAZEM TWOJĄ INSTALACJĘ"
             description="Napisz lub zadzwoń, skontaktuj się z naszymi specjalistami."
