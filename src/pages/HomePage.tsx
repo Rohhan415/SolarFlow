@@ -5,6 +5,7 @@ import InstallationStepsSection from "../components/Sections/InstallationStepsSe
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import Footer from "../components/Footer/Footer";
 import useTimer from "../hooks/useTimer";
+import EnergySolutionsSection from "../components/Sections/EnergySolutionsSection/EnergySolutionsSection";
 
 function Homepage() {
   const showSection = useTimer({ delay: 500 });
@@ -18,6 +19,7 @@ function Homepage() {
           <StartingPageSlider />
           <AboutUs />
           <InstallationStepsSection />
+          <EnergySolutionsSection />
           <Footer />
         </>
       )}

@@ -35,6 +35,7 @@ export default function StartingPageSlider() {
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
+            shouldLazyLoad: true,
             backgroundImageSrc: img1,
             backgroundImageSrcSet: `${img1} 1920w`,
             backgroundImageAlt: "slider image",
@@ -49,8 +50,9 @@ export default function StartingPageSlider() {
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
+            shouldLazyLoad: true,
             backgroundImageSrc: img10,
-            backgroundImageSrcSet: `${img1} 1920w`,
+            backgroundImageSrcSet: `${img10} 1920w`,
             backgroundImageAlt: "slider image",
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",
@@ -63,8 +65,9 @@ export default function StartingPageSlider() {
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
+            shouldLazyLoad: true,
             backgroundImageSrc: img8,
-            backgroundImageSrcSet: `${img1} 1920w`,
+            backgroundImageSrcSet: `${img8} 1920w`,
             backgroundImageAlt: "slider image",
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",

@@ -10,7 +10,8 @@ function AboutUsImages() {
         <img
           src={image4}
           srcSet={`${image4} 1920w`}
-          alt=""
+          alt="About Us Section Image 1"
+          loading="lazy"
           className={styles.aboutUsColumnCompositionImage1}
         />
         <NavLink
@@ -23,7 +24,8 @@ function AboutUsImages() {
         <img
           src={image9}
           srcSet={`${image9} 1920w`}
-          alt=""
+          alt="About Us Section Image 2"
+          loading="lazy"
           className={styles.aboutUsColumnCompositionImage2}
         />
       </div>
