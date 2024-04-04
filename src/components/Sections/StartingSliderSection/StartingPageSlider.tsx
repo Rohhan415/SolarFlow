@@ -1,9 +1,9 @@
 import "hero-slider/dist/index.css";
 import HeroSlider, { Slide, Nav, SideNav, AutoplayButton } from "hero-slider";
 
-import img1 from "../../assets/image1.jpg";
-import img10 from "../../assets/image10.jpg";
-import img8 from "../../assets/image8.jpg";
+import img1 from "../../../assets/image1.jpg";
+import img10 from "../../../assets/image10.jpg";
+import img8 from "../../../assets/image8.jpg";
 
 import FirstSlide from "./Slides/FirstSlide";
 import SecondSlide from "./Slides/SecondSlide";
@@ -36,6 +36,8 @@ export default function StartingPageSlider() {
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
             backgroundImageSrc: img1,
+            backgroundImageSrcSet: `${img1} 1920w`,
+            backgroundImageAlt: "slider image",
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",
           }}
@@ -48,6 +50,8 @@ export default function StartingPageSlider() {
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
             backgroundImageSrc: img10,
+            backgroundImageSrcSet: `${img1} 1920w`,
+            backgroundImageAlt: "slider image",
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",
           }}
@@ -60,6 +64,8 @@ export default function StartingPageSlider() {
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
             backgroundImageSrc: img8,
+            backgroundImageSrcSet: `${img1} 1920w`,
+            backgroundImageAlt: "slider image",
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",
           }}

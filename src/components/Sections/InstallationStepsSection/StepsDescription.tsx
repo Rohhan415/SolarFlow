@@ -14,12 +14,12 @@ const StepsDescription: React.FC<StepsDescriptionProps> = ({
   return (
     <div className={styles.installationStepContainer}>
       <div className={styles.installationStepNumbers}>
-        <h6 className={styles.installationStepNumbersText}>
+        <h4 className={styles.installationStepNumbersText}>
           Krok
           <p>{number}</p>
-        </h6>
+        </h4>
       </div>
-      <h4 className={styles.moduleHeader}>{title}</h4>
+      <h5 className={styles.moduleHeader}>{title}</h5>
       <span className={styles.StepNumbersParagraph}>{description}</span>
     </div>
   );

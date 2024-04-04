@@ -1,6 +1,6 @@
 import AboutUs from "../components/Sections/AboutUsSection/AboutUs";
 import NavigationBar from "../components/Navigation/NavigationBar";
-import StartingPageSlider from "../components/StartingSliderSection/StartingPageSlider";
+import StartingPageSlider from "../components/Sections/StartingSliderSection/StartingPageSlider";
 import InstallationStepsSection from "../components/Sections/InstallationStepsSection/InstallationStepsSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import Footer from "../components/Footer/Footer";

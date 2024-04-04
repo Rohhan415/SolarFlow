@@ -9,6 +9,7 @@ function AboutUsImages() {
       <div className={styles.aboutUsColumnComposition}>
         <img
           src={image4}
+          srcSet={`${image4} 1920w`}
           alt=""
           className={styles.aboutUsColumnCompositionImage1}
         />
@@ -21,6 +22,7 @@ function AboutUsImages() {
 
         <img
           src={image9}
+          srcSet={`${image9} 1920w`}
           alt=""
           className={styles.aboutUsColumnCompositionImage2}
         />

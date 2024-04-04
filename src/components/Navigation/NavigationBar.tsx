@@ -43,6 +43,7 @@ function NavigationBar() {
           >
             <NavLink to="/">
               <img
+                rel="preload"
                 src={Logo}
                 className={
                   showNavigation
