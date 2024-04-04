@@ -49,6 +49,10 @@
   color: white;
 }
 
+.containerMove img {
+  background-color: rgba(3, 41, 71, 0);
+}
+
 .navLogo,
 .navLogoMove {
   display: flex;
@@ -86,6 +90,10 @@
 
 .NavList a {
   padding: 1rem;
+}
+
+.navTitle {
+  height: 7.4rem;
 }
 
 /* Smaller Desktop Screen breakpoints */
@@ -130,6 +138,8 @@
     margin-left: 2rem;
     font-size: 2.8rem;
     -text-shadow: 0 0 3px #000000;
+    background-size: cover;
+    background-position: center;
   }
 
   .NavList {

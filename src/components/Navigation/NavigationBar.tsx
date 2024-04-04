@@ -41,7 +41,17 @@ function NavigationBar() {
               showNavigation ? `${styles.navLogoMove}` : `${styles.navLogo}`
             }
           >
-            <img src={Logo} className={styles.navTitle} alt="Logo Firmy" />
+            <NavLink to="/">
+              <img
+                src={Logo}
+                className={
+                  showNavigation
+                    ? `${styles.containerMove}`
+                    : `${styles.container} `
+                }
+                alt="Logo Firmy"
+              />
+            </NavLink>
           </div>
 
           <ul

@@ -1,9 +1,13 @@
 import "hero-slider/dist/index.css";
 import HeroSlider, { Slide, Nav, SideNav, AutoplayButton } from "hero-slider";
-import styles from "./StartingPageSlider.module.css";
+
 import img1 from "../../assets/image1.jpg";
-import img2 from "../../assets/image2.jpg";
+import img10 from "../../assets/image10.jpg";
 import img8 from "../../assets/image8.jpg";
+
+import FirstSlide from "./Slides/FirstSlide";
+import SecondSlide from "./Slides/SecondSlide";
+import ThirdSlide from "./Slides/ThirdSlide";
 
 export default function StartingPageSlider() {
   return (
@@ -36,33 +40,19 @@ export default function StartingPageSlider() {
             backgroundAnimationDuration: "3500",
           }}
         >
-          <div className={styles.container}>
-            <h2 className={styles.slideTitle}>
-              Twoja Droga do Odnawialnej Energii Zaczyna Się Tutaj
-            </h2>
-            <h1 className={styles.slideMainTitle}>
-              EKOLOGICZNA ENERGIA <br /> DLA TWOJEGO DOMU
-            </h1>
-            <p className={styles.slideInformation}>
-              Oferujemy instalację paneli fotowoltaicznych, profesjonalne
-              doradztwo oraz kompleksową obsługę klienta. Skontaktuj się z nami
-              już dziś!
-            </p>
-          </div>
+          <FirstSlide />
         </Slide>
 
         <Slide
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
             backgroundImageBlendMode: "color",
-            backgroundImageSrc: img2,
+            backgroundImageSrc: img10,
             backgroundAnimation: "zoom",
             backgroundAnimationDuration: "3500",
           }}
         >
-          <div className="flex items-center justify-center h-full text-white text-9xl ">
-            XXXXXXXXXXX
-          </div>
+          <SecondSlide />
         </Slide>
 
         <Slide
@@ -74,9 +64,7 @@ export default function StartingPageSlider() {
             backgroundAnimationDuration: "3500",
           }}
         >
-          <div className="flex items-center justify-center h-full text-white text-9xl ">
-            XXXXXXXX
-          </div>
+          <ThirdSlide />
         </Slide>
       </HeroSlider>
     </section>
