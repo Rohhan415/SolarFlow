@@ -1,26 +1,35 @@
 import styles from "./EnergySolutionsSection.module.css";
+import img2 from "../../../assets/image2.jpg";
 
 function EnergySolutionsSection() {
   return (
     <section className={styles.container}>
-      <h2>Most popular tours</h2>
-      <div>
+      <div className={styles.energySolutions}>
         <div>
-          <div>
-            <div></div>
-            &nbsp;
-            <h4>
-              <span>The sea explorer</span>
-            </h4>
-            <div>
-              <ul>
-                <li>3 day tours</li>
-                <li>Up to 30 people</li>
-                <li>2 tour guides</li>
-                <li>Sleep in cozy hotels</li>
-                <li>Difficulty: easy</li>
-              </ul>
+          {" "}
+          <img className={styles.solutionImage} src={img2} />
+          <div className={styles.solutionDescriptionContainer}>
+            <h3 className={styles.solutionTitle}>Fotowoltaika</h3>
+            <div className={styles.solutionDescription}>
+              Fotowoltaika to technologia, która wykorzystuje energię słoneczną
+              do produkcji elektryczności.Panele mogą być zamontowane na dachu
+              domu lub na ziemi co daje szerokie możliwości wykorzystania
+              instalacji.
             </div>
+          </div>
+        </div>
+        <div>
+          {" "}
+          <img className={styles.solutionImage} src={img2} />
+          <div className={styles.solutionDescriptionContainer}>
+            <h3 className={styles.solutionTitle}>Pompy Ciepła</h3>
+          </div>
+        </div>
+        <div>
+          {" "}
+          <img className={styles.solutionImage} src={img2} />
+          <div className={styles.solutionDescriptionContainer}>
+            <h3 className={styles.solutionTitle}>Klimatyzacja</h3>
           </div>
         </div>
       </div>

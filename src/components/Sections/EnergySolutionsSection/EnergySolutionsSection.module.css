@@ -2,3 +2,36 @@
   border-bottom: 1px solid #eee;
   color: var(--text-black);
 }
+
+.energySolutions {
+  display: flex;
+  justify-content: center;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 12.4rem 0;
+  gap: 6.4rem;
+}
+
+.solutionDescriptionContainer {
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.solutionImage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.solutionTitle {
+  font-weight: 600;
+  font-size: 22px;
+  color: #0326a5;
+}
+
+.solutionDescription {
+  margin-top: 1rem;
+  line-height: 3rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
