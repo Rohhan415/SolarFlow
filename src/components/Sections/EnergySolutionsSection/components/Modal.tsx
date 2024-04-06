@@ -4,6 +4,10 @@ import { useModalContext } from "../../../../contexts/useModalContext";
 function Modal() {
   const { modalOpen, handleModalClose } = useModalContext();
 
+  const handleContentClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <div
       className={`${styles.popup} ${
@@ -11,7 +15,7 @@ function Modal() {
       }`}
       onClick={handleModalClose}
     >
-      <div className={styles.popupContent}>
+      <div className={styles.popupContent} onClick={handleContentClick}>
         <button className={styles.buttonClose} onClick={handleModalClose}>
           Close
         </button>
