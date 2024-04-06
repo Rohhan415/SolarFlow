@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NavBarProvider } from "./contexts/NavigationContext";
+
 import Homepage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import PageNotFound from "./pages/PageNotFound";
+import { CombinedProvider } from "./contexts/globalProvider";
 
 function App() {
   return (
-    <NavBarProvider>
+    <CombinedProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
@@ -14,7 +15,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </NavBarProvider>
+    </CombinedProvider>
   );
 }
 

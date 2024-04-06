@@ -2,10 +2,12 @@ import styles from "./EnergySolutionsSection.module.css";
 import img2 from "../../../assets/image2.jpg";
 import img11 from "../../../assets/image11.jpg";
 import img7 from "../../../assets/image7.jpg";
-import { useState } from "react";
+
+import { useModalContext } from "../../../contexts/useModalContext";
+import Modal from "./components/Modal";
 
 function EnergySolutionsSection() {
-  const [showModal, setShowModal] = useState(false);
+  const { handleModalOpen } = useModalContext();
 
   return (
     <section className={styles.container}>
@@ -13,29 +15,11 @@ function EnergySolutionsSection() {
         <div className={styles.solutionContainer}>
           <div className={styles.imageContainer}>
             <img className={styles.solutionImage} src={img2} alt="Solution" />
-            <button
-              className={styles.imageButton}
-              onClick={() => setShowModal(true)}
-            >
+            <button className={styles.imageButton} onClick={handleModalOpen}>
               Zobacz więcej
             </button>
           </div>
-          {showModal && (
-            <div className={`${styles.popup} ${showModal ? "" : styles.close}`}>
-              <div
-                className={`${styles.popupContent} ${
-                  showModal ? "" : styles.close
-                }`}
-              >
-                <button
-                  className={styles.buttonClose}
-                  onClick={() => setShowModal(false)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          )}
+          <Modal />
           <div className={styles.solutionDescriptionContainer}>
             <h3 className={styles.solutionTitle}>Fotowoltaika</h3>
             <div className={styles.solutionDescription}>
