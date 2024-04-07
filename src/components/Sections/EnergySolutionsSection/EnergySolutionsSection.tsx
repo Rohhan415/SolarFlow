@@ -44,7 +44,6 @@ const solutions: SolutionType[] = [
     modalDescription: "Klimatyzacja",
     modalImgSrc: img7,
   },
-  // Add more solutions here
 ];
 function EnergySolutionsSection() {
   const [currentSolution, setCurrentSolution] = useState<SolutionType>(

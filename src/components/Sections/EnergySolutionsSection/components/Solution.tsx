@@ -14,7 +14,7 @@ function Solution({ title, description, imgSrc, onImageClick }: SolutionProps) {
 
   const handleClick = () => {
     handleModalOpen();
-    onImageClick(); // Call onImageClick here
+    onImageClick(); 
   };
 
   return (
