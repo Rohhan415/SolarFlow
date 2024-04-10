@@ -14,6 +14,19 @@ function Modal({ solution }: { solution: SolutionType }) {
     e.stopPropagation();
   };
 
+  const getModalClass = (solutionTitle: number) => {
+    switch (solutionTitle) {
+      case 1:
+        return styles.modalHeadingFotowoltaika;
+      case 2:
+        return styles.modalHeadingPompy;
+      case 3:
+        return styles.modalHeadingKlimatyzacja;
+      default:
+        return "";
+    }
+  };
+
   return (
     <div
       className={`${styles.popup} ${
@@ -23,12 +36,16 @@ function Modal({ solution }: { solution: SolutionType }) {
     >
       <div className={styles.popupContent} onClick={handleContentClick}>
         <img
-          className={styles.popupImage}
+          loading="lazy"
+          className={styles.modalImage}
           src={solution.modalImgSrc}
           alt={solution.modalTitle}
         />
-        <h1>{solution.modalTitle}</h1>
-        <p>{solution.modalDescription}</p>
+        <div className={styles.modalInformation}>
+          {" "}
+          <h1 className={getModalClass(solution.key)}>{solution.modalTitle}</h1>
+          <p className={styles.modalDescription}>{solution.modalDescription}</p>
+        </div>
         <button className={styles.buttonClose} onClick={handleModalClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +53,7 @@ function Modal({ solution }: { solution: SolutionType }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-12 h-12 transition-colors duration-200 ease-out hover:text-[#83c341]"
           >
             <path
               strokeLinecap="round"

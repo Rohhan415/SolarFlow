@@ -1,9 +1,6 @@
 import styles from "./EnergySolutionsSection.module.css";
-import img2 from "../../../assets/image2.jpg";
-import img5 from "../../../assets/image5.jpg";
-import img11 from "../../../assets/image11.jpg";
-import img7 from "../../../assets/image7.jpg";
 
+import { solutions } from "./components/solutions";
 import Solution from "./components/Solution";
 import Modal from "./components/Modal";
 import { useState } from "react";
@@ -15,37 +12,9 @@ export type SolutionType = {
   modalTitle: string;
   modalDescription: string;
   modalImgSrc: string;
+  key: number;
 };
 
-const solutions: SolutionType[] = [
-  {
-    title: "Fotowoltaika",
-    description:
-      "Fotowoltaika to technologia, która wykorzystuje energię słoneczną do produkcji elektryczności. Panele mogą być zamontowane na dachu domu lub na ziemi co daje szerokie możliwości wykorzystania instalacji.",
-    imgSrc: img2,
-    modalTitle: "Fotowoltaika",
-    modalDescription: "Fotowoltaika",
-    modalImgSrc: img5,
-  },
-  {
-    title: "Pompy Ciepła",
-    description:
-      "Pompy ciepła to urządzenia, które używają energii z otoczenia do ogrzewania lub chłodzenia pomieszczeń. Działają na zasadzie przekazywania ciepła z jednego miejsca do drugiego.",
-    imgSrc: img11,
-    modalTitle: "Pompy Ciepła",
-    modalDescription: "Pompy Ciepła",
-    modalImgSrc: img5,
-  },
-  {
-    title: "Klimatyzacja",
-    description:
-      "Klimatyzacja to system, który reguluje temperaturę, wilgotność i czystość powietrza w pomieszczeniach, zapewniając komfortowe warunki życia. Działa poprzez chłodzenie lub ogrzewanie powietrza oraz usuwanie wilgoci i zanieczyszczeń.",
-    imgSrc: img7,
-    modalTitle: "Klimatyzacja",
-    modalDescription: "Klimatyzacja",
-    modalImgSrc: img7,
-  },
-];
 function EnergySolutionsSection() {
   const [currentSolution, setCurrentSolution] = useState<SolutionType>(
     solutions[0]
@@ -60,7 +29,7 @@ function EnergySolutionsSection() {
       <div className={styles.energySolutions}>
         {solutions.map((solution) => (
           <Solution
-            key={solution.title}
+            key={solution.key}
             title={solution.title}
             description={solution.description}
             imgSrc={solution.imgSrc}
