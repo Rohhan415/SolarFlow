@@ -22,12 +22,29 @@ function Modal({ solution }: { solution: SolutionType }) {
       onClick={handleModalClose}
     >
       <div className={styles.popupContent} onClick={handleContentClick}>
-        <button className={styles.buttonClose} onClick={handleModalClose}>
-          Close
-        </button>
+        <img
+          className={styles.popupImage}
+          src={solution.modalImgSrc}
+          alt={solution.modalTitle}
+        />
         <h1>{solution.modalTitle}</h1>
         <p>{solution.modalDescription}</p>
-        <img src={solution.modalImgSrc} alt={solution.modalTitle} />
+        <button className={styles.buttonClose} onClick={handleModalClose}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );

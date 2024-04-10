@@ -12,7 +12,6 @@ function Homepage() {
 
   return (
     <>
-      <StartingLoadingScreen />
       <NavigationBar />
       {showSection && (
         <>
@@ -23,6 +22,7 @@ function Homepage() {
           <Footer />
         </>
       )}
+      <StartingLoadingScreen />
     </>
   );
 }

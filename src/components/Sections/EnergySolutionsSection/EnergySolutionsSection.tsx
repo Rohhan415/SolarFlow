@@ -1,5 +1,6 @@
 import styles from "./EnergySolutionsSection.module.css";
 import img2 from "../../../assets/image2.jpg";
+import img5 from "../../../assets/image5.jpg";
 import img11 from "../../../assets/image11.jpg";
 import img7 from "../../../assets/image7.jpg";
 
@@ -24,7 +25,7 @@ const solutions: SolutionType[] = [
     imgSrc: img2,
     modalTitle: "Fotowoltaika",
     modalDescription: "Fotowoltaika",
-    modalImgSrc: img2,
+    modalImgSrc: img5,
   },
   {
     title: "Pompy Ciepła",
@@ -33,7 +34,7 @@ const solutions: SolutionType[] = [
     imgSrc: img11,
     modalTitle: "Pompy Ciepła",
     modalDescription: "Pompy Ciepła",
-    modalImgSrc: img11,
+    modalImgSrc: img5,
   },
   {
     title: "Klimatyzacja",
