@@ -4,6 +4,7 @@ import { solutions } from "./components/solutions";
 import Solution from "./components/Solution";
 import Modal from "./components/Modal";
 import { useState } from "react";
+import Header from "./components/Header";
 
 export type SolutionType = {
   title: string;
@@ -26,6 +27,7 @@ function EnergySolutionsSection() {
 
   return (
     <section className={styles.container}>
+      <Header />
       <div className={styles.energySolutions}>
         {solutions.map((solution) => (
           <Solution

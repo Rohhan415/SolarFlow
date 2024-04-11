@@ -21,7 +21,7 @@ function FooterInformation() {
             <NavLink to="/contact">Kontakt</NavLink>
           </li>
           <li className={styles.footerInformationListButton}>
-            <NavLink to="*">Polityka Prywatności</NavLink>
+            <NavLink to="/policy">Polityka Prywatności</NavLink>
           </li>
           <li className={styles.footerInformationListButton}>
             <NavLink to="*">Oferta</NavLink>

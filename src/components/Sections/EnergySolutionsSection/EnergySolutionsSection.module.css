@@ -1,6 +1,7 @@
 .container {
   border-bottom: 1px solid #eee;
   color: var(--text-black);
+  padding-top: 10rem;
 }
 
 .energySolutions {
@@ -9,6 +10,6 @@
   justify-content: center;
   max-width: 120rem;
   margin: 0 auto;
-  padding: 12.4rem 0;
+  padding: 10rem 0;
   gap: 6.4rem;
 }
