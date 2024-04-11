@@ -23,9 +23,6 @@ function FooterInformation() {
           <li className={styles.footerInformationListButton}>
             <NavLink to="/policy">Polityka Prywatności</NavLink>
           </li>
-          <li className={styles.footerInformationListButton}>
-            <NavLink to="*">Oferta</NavLink>
-          </li>
         </ul>
       </nav>
       <div className={styles.footerInformationAddress}>
