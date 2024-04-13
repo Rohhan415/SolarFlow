@@ -1,4 +1,3 @@
-import BackgroundTop from "../components/Sections/ContactPageSection/BackgroundTop";
 import PageNav from "../components/Navigation//NavigationBar";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import useTimer from "../hooks/useTimer";
@@ -13,7 +12,6 @@ function ContactPage() {
       {showSection && (
         <>
           <PageNav />
-          <BackgroundTop />
           <ContactForm />
           <Footer />
         </>

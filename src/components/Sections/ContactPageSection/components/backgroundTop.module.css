@@ -1,0 +1,50 @@
+.background {
+  position: relative;
+  background-size: cover;
+  background-image: url(../../../../assets/image4.jpg);
+  height: 49rem;
+}
+
+.backgroundColor {
+  position: absolute;
+  inset: 0px;
+  background-color: rgb(0 0 0 / 0.6);
+  display: flex;
+  align-items: flex-end;
+}
+
+.headerContainer {
+  display: flex;
+  width: 120rem;
+  padding-bottom: 6rem;
+  margin: 0 auto;
+  font-size: 3.2rem;
+  max-width: 120rem;
+}
+
+.header {
+  position: relative;
+  color: white;
+}
+
+.header:before,
+.header:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--pale-green);
+  z-index: 2;
+}
+
+.header:before {
+  top: -5px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+
+.header:after {
+  bottom: -5px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
