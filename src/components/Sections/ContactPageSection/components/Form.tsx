@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm, useWatch } from "react-hook-form";
 
 export default function ContactForm() {
-  const [formState, setFormState] = useState({ isSuccess: false, message: "" });
+  const [formState, setFormState] = useState({
+    isSuccess: false,
+    message: "",
+    isSubmitted: false,
+  });
 
   const accessKey = import.meta.env.VITE_FORM_KEY as string;
   const accessURL = import.meta.env.VITE_FORM_URL as string;
@@ -32,6 +36,8 @@ export default function ContactForm() {
   }, [userName, setValue]);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data, e) => {
+    setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
+
     // Create a FormData object from the form
     const formData = new FormData(e?.target as HTMLFormElement);
 
@@ -50,24 +56,27 @@ export default function ContactForm() {
       .then(async (response) => {
         const json = await response.json();
         if (json.success) {
-          setFormState((prevState) => ({ ...prevState, isSuccess: true }));
           setFormState((prevState) => ({
             ...prevState,
+            isSuccess: true,
+            isSubmitted: false,
             message: json.message,
           }));
+
           reset();
         } else {
-          setFormState((prevState) => ({ ...prevState, isSuccess: false }));
           setFormState((prevState) => ({
             ...prevState,
             message: json.message,
+            isSuccess: false,
           }));
         }
       })
       .catch((error) => {
-        setFormState((prevState) => ({ ...prevState, isSuccess: false }));
         setFormState((prevState) => ({
           ...prevState,
+          isSuccess: false,
+          isSubmitted: false,
           message: "Client Error. Please check the console.log for more info",
         }));
         console.log(error);
@@ -80,7 +89,12 @@ export default function ContactForm() {
         <h3 className={styles.title}>Formularz Kontaktowy</h3>
         <h1 className={styles.header}>NAPISZ DO NAS</h1>
         {!isSubmitSuccessful && (
-          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit(onSubmit, () =>
+              setFormState((prevState) => ({ ...prevState, isSubmitted: true }))
+            )}
+          >
             <input type="hidden" value={accessKey} {...register("accessKey")} />
             <input type="hidden" {...register("subject")} />
             <input type="hidden" value="SolarFlow" {...register("from_name")} />
@@ -97,7 +111,7 @@ export default function ContactForm() {
               placeholder="Imię"
               autoComplete="false"
               className={`${styles.input} ${
-                errors.name
+                formState.isSubmitted && errors.name
                   ? "border-red-600 focus:border-red-600 ring-red-100"
                   : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
               }`}
@@ -108,7 +122,7 @@ export default function ContactForm() {
             />
 
             <label htmlFor="email_address" className="sr-only">
-              Email Address
+              Email
             </label>
             <input
               id="email_address"
@@ -116,15 +130,16 @@ export default function ContactForm() {
               placeholder="Email"
               autoComplete="false"
               className={`${styles.input} ${
-                errors.email
+                (formState.isSubmitted && errors.email) ||
+                errors.email?.type === "pattern"
                   ? "border-red-600 focus:border-red-600 ring-red-100"
                   : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
               }`}
               {...register("email", {
-                required: "Enter your email",
+                required: "Podaj adres email",
                 pattern: {
                   value: /^\S+@\S+$/i,
-                  message: "Please enter a valid email",
+                  message: "Podaj poprawny adres email",
                 },
               })}
             />
@@ -134,13 +149,18 @@ export default function ContactForm() {
               placeholder="Telefon"
               autoComplete="false"
               className={`${styles.input} ${
-                errors.name
+                (formState.isSubmitted && errors.phone) ||
+                errors.phone?.type === "pattern"
                   ? "border-red-600 focus:border-red-600 ring-red-100"
                   : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
               }`}
-              {...register("name", {
-                required: "Full name is required",
-                maxLength: 80,
+              {...register("phone", {
+                required: "Podaj numer telefonu",
+                pattern: {
+                  value: /^\d+$/,
+                  message: "Numer telefonu powinien zawierać tylko cyfry",
+                },
+                maxLength: 9,
               })}
             />
 
@@ -149,30 +169,45 @@ export default function ContactForm() {
               placeholder="Temat"
               autoComplete="false"
               className={`${styles.input} ${
-                errors.name
+                formState.isSubmitted && errors.topic
                   ? "border-red-600 focus:border-red-600 ring-red-100"
                   : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
               }`}
-              {...register("name", {
-                required: "Full name is required",
+              {...register("topic", {
+                required: "Podaj temat wiadomości",
                 maxLength: 80,
               })}
             />
 
             <textarea
-              placeholder="Your Message"
+              placeholder="Wiadomość"
               className={`${styles.inputMessage} ${
-                errors.message
+                formState.isSubmitted && errors.message
                   ? "border-red-600 focus:border-red-600 ring-red-100"
                   : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
               }`}
-              {...register("message", { required: "Enter your Message" })}
+              {...register("message", { required: "Podaj swoją wiadomość" })}
             />
-
-            <button
-              type="submit"
-              className="w-full py-4 text-white transition-colors bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-indigo-200 px-7 umami--click--contact-submit"
-            >
+            <div>
+              <input
+                type="checkbox"
+                id="privacyPolicy"
+                {...register("privacyPolicy", {
+                  required: "Musisz zaakceptować politykę prywatności",
+                })}
+              />
+              <label
+                className={`${
+                  formState.isSubmitted && errors.privacyPolicy
+                    ? "text-red-600"
+                    : ""
+                }`}
+                htmlFor="privacyPolicy"
+              >
+                Akceptuję politykę prywatności
+              </label>
+            </div>
+            <button type="submit" className={`${styles.button} `}>
               {isSubmitting ? (
                 <svg
                   className="w-5 h-5 mx-auto text-white animate-spin"
