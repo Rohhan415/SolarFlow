@@ -1,17 +1,47 @@
 .form {
-  width: 60%;
   display: flex;
-
+  width: 100%;
   flex-direction: column;
   gap: 3rem;
-
-  color: black;
+  color: var(--text-black);
 }
 .formContainer {
   flex-grow: 2;
-  padding: 4rem 0;
+  padding: 4rem 5rem 4rem 5rem;
 }
 
 .input {
-  border: 1px solid black;
+  border: 2px solid var(--text-black);
+  border-radius: 0.375rem;
+  font-size: 1.4rem;
+  padding: 1.6rem;
+}
+
+.inputMessage {
+  border: 2px solid var(--text-black);
+  border-radius: 0.375rem;
+  font-size: 1.4rem;
+  padding: 1.6rem;
+  height: 18rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+  color: var(--pale-green);
+}
+
+.header {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: var(--text-black);
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
 }
