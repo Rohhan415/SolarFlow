@@ -286,7 +286,11 @@ export default function ContactForm() {
                 }`}
                 {...register("topic", {
                   required: "Podaj temat wiadomości",
-                  maxLength: 80,
+                  maxLength: {
+                    value: 100,
+                    message:
+                      "Temat wiadomości nie może być dłuższy niż 100 znaków",
+                  },
                 })}
               />
             </div>
@@ -348,7 +352,7 @@ export default function ContactForm() {
                 </label>
               </div>
             </div>
-            <button type="submit" className={`${styles.button} `}>
+            <button type="submit" className={styles.button}>
               {isSubmitting ? (
                 <svg
                   className="w-5 h-5 mx-auto text-white animate-spin"
