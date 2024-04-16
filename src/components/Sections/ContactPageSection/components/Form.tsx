@@ -2,8 +2,14 @@ import styles from "./form.module.css";
 import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm, useWatch } from "react-hook-form";
 
+interface FormState {
+  isSuccess: boolean;
+  message: string;
+  isSubmitted: boolean;
+}
+
 export default function ContactForm() {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     isSuccess: false,
     message: "",
     isSubmitted: false,
@@ -12,8 +18,6 @@ export default function ContactForm() {
   const accessKey = import.meta.env.VITE_FORM_KEY as string;
   const accessURL = import.meta.env.VITE_FORM_URL as string;
 
-  // const accessKey = import.meta.env.VITE_FORM_KEY as string;
-  // const accessURL = import.meta.env.VITE_FORM_URL as string;
   const {
     register,
     handleSubmit,
@@ -25,10 +29,11 @@ export default function ContactForm() {
     mode: "onTouched",
   });
 
+  // Watch used to update the subject field in the sent email
   const userName = useWatch({
     control,
     name: "name",
-    defaultValue: "Someone",
+    defaultValue: "The Client",
   });
 
   useEffect(() => {
@@ -90,6 +95,7 @@ export default function ContactForm() {
         <h1 className={styles.header}>NAPISZ DO NAS</h1>
         {!isSubmitSuccessful && (
           <form
+            noValidate
             className={styles.form}
             onSubmit={handleSubmit(onSubmit, () =>
               setFormState((prevState) => ({ ...prevState, isSubmitted: true }))
@@ -105,107 +111,242 @@ export default function ContactForm() {
               style={{ display: "none" }}
               {...register("botcheck")}
             ></input>
-
-            <input
-              type="text"
-              placeholder="Imię"
-              autoComplete="false"
-              className={`${styles.input} ${
-                formState.isSubmitted && errors.name
-                  ? "border-red-600 focus:border-red-600 ring-red-100"
-                  : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-              }`}
-              {...register("name", {
-                required: "Full name is required",
-                maxLength: 80,
-              })}
-            />
+            <div>
+              <div className={styles.inputContainer}>
+                <p className={styles.inputTitle}>Imię</p>
+                {formState.isSubmitted && errors.name && (
+                  <div className={styles.inputError}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                      />
+                    </svg>
+                    {`${errors.name.message}`}
+                  </div>
+                )}
+              </div>
+              <input
+                type="text"
+                placeholder="Imię"
+                autoComplete="false"
+                className={`${styles.input} ${
+                  formState.isSubmitted && errors.name
+                    ? "border-red-600 focus:border-red-600 ring-red-100"
+                    : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                }`}
+                {...register("name", {
+                  required: "Podaj swoje Imię",
+                  maxLength: {
+                    value: 40,
+                    message: "Imię nie może być dłuższe niż 40 znaków",
+                  },
+                })}
+              />
+            </div>
 
             <label htmlFor="email_address" className="sr-only">
               Email
             </label>
-            <input
-              id="email_address"
-              type="email"
-              placeholder="Email"
-              autoComplete="false"
-              className={`${styles.input} ${
-                (formState.isSubmitted && errors.email) ||
-                errors.email?.type === "pattern"
-                  ? "border-red-600 focus:border-red-600 ring-red-100"
-                  : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-              }`}
-              {...register("email", {
-                required: "Podaj adres email",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Podaj poprawny adres email",
-                },
-              })}
-            />
-
-            <input
-              type="text"
-              placeholder="Telefon"
-              autoComplete="false"
-              className={`${styles.input} ${
-                (formState.isSubmitted && errors.phone) ||
-                errors.phone?.type === "pattern"
-                  ? "border-red-600 focus:border-red-600 ring-red-100"
-                  : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-              }`}
-              {...register("phone", {
-                required: "Podaj numer telefonu",
-                pattern: {
-                  value: /^\d+$/,
-                  message: "Numer telefonu powinien zawierać tylko cyfry",
-                },
-                maxLength: 9,
-              })}
-            />
-
-            <input
-              type="text"
-              placeholder="Temat"
-              autoComplete="false"
-              className={`${styles.input} ${
-                formState.isSubmitted && errors.topic
-                  ? "border-red-600 focus:border-red-600 ring-red-100"
-                  : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-              }`}
-              {...register("topic", {
-                required: "Podaj temat wiadomości",
-                maxLength: 80,
-              })}
-            />
-
-            <textarea
-              placeholder="Wiadomość"
-              className={`${styles.inputMessage} ${
-                formState.isSubmitted && errors.message
-                  ? "border-red-600 focus:border-red-600 ring-red-100"
-                  : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-              }`}
-              {...register("message", { required: "Podaj swoją wiadomość" })}
-            />
             <div>
+              <div className={styles.inputContainer}>
+                <p className={styles.inputTitle}>Email</p>
+                {formState.isSubmitted && errors.email && (
+                  <div className={styles.inputError}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                      />
+                    </svg>
+
+                    {`${errors.email.message}`}
+                  </div>
+                )}
+              </div>
               <input
-                type="checkbox"
-                id="privacyPolicy"
-                {...register("privacyPolicy", {
-                  required: "Musisz zaakceptować politykę prywatności",
+                id="email_address"
+                type="email"
+                placeholder="Email"
+                autoComplete="false"
+                className={`${styles.input} ${
+                  (formState.isSubmitted && errors.email) ||
+                  errors.email?.type === "pattern"
+                    ? "border-red-600 focus:border-red-600 ring-red-100"
+                    : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                }`}
+                {...register("email", {
+                  required: "Podaj poprawny adres email",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Podaj poprawny adres email",
+                  },
                 })}
               />
-              <label
-                className={`${
-                  formState.isSubmitted && errors.privacyPolicy
-                    ? "text-red-600"
-                    : ""
+            </div>
+            <div>
+              <div className={styles.inputContainer}>
+                <p className={styles.inputTitle}>Telefon</p>
+                {formState.isSubmitted && errors.phone && (
+                  <div className={styles.inputError}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                      />
+                    </svg>
+                    {`${errors.phone.message}`}
+                  </div>
+                )}
+              </div>
+              <input
+                type="text"
+                placeholder="Telefon"
+                autoComplete="false"
+                className={`${styles.input} ${
+                  (formState.isSubmitted && errors.phone) ||
+                  errors.phone?.type === "pattern"
+                    ? "border-red-600 focus:border-red-600 ring-red-100"
+                    : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
                 }`}
-                htmlFor="privacyPolicy"
-              >
-                Akceptuję politykę prywatności
-              </label>
+                {...register("phone", {
+                  required: "Podaj numer telefonu",
+                  pattern: {
+                    value: /^\d+$/,
+                    message: "Numer telefonu powinien zawierać tylko cyfry",
+                  },
+                  minLength: {
+                    value: 9,
+                    message:
+                      "Numer telefonu powinien zawierać co najmniej 9 cyfr",
+                  },
+                  maxLength: {
+                    value: 15,
+                    message:
+                      "Numer telefonu powinien zawierać nie więcej niż 15 cyfr",
+                  },
+                })}
+              />
+            </div>
+            <div>
+              <div className={styles.inputContainer}>
+                <p className={styles.inputTitle}>Temat</p>
+                {formState.isSubmitted && errors.topic && (
+                  <div className={styles.inputError}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                      />
+                    </svg>
+                    {`${errors.topic.message}`}
+                  </div>
+                )}
+              </div>
+              <input
+                type="text"
+                placeholder="Temat"
+                autoComplete="false"
+                className={`${styles.input} ${
+                  formState.isSubmitted && errors.topic
+                    ? "border-red-600 focus:border-red-600 ring-red-100"
+                    : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                }`}
+                {...register("topic", {
+                  required: "Podaj temat wiadomości",
+                  maxLength: 80,
+                })}
+              />
+            </div>
+            <div>
+              <div className={styles.inputContainer}>
+                <p className={styles.inputTitle}>Wiadomość</p>
+                {formState.isSubmitted && errors.message && (
+                  <div className={styles.inputError}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                      />
+                    </svg>
+                    {`${errors.message.message}`}
+                  </div>
+                )}
+              </div>
+              <textarea
+                placeholder="Wiadomość"
+                className={`${styles.inputMessage} ${
+                  formState.isSubmitted && errors.message
+                    ? "border-red-600 focus:border-red-600 ring-red-100"
+                    : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                }`}
+                {...register("message", {
+                  required: "Wiadomość nie może być pusta",
+                })}
+              />
+
+              <div className={styles.privacyPolicy}>
+                <label
+                  className={`${
+                    formState.isSubmitted && errors.privacyPolicy
+                      ? "text-red-600"
+                      : ""
+                  }`}
+                  htmlFor="privacyPolicy"
+                >
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    id="privacyPolicy"
+                    {...register("privacyPolicy", {
+                      required: "Musisz zaakceptować politykę prywatności",
+                    })}
+                  />
+                  Zgadzam się na przetwarzanie informacji danych osobowych,
+                  podanych w formularzu kontaktowym, w zakresie, który jest
+                  niezbędny do udzielenia mi odpowiedzi i wyłącznie w tym celu.
+                </label>
+              </div>
             </div>
             <button type="submit" className={`${styles.button} `}>
               {isSubmitting ? (
