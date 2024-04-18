@@ -1,97 +1,25 @@
 import styles from "./form.module.css";
-import { useEffect, useState } from "react";
-import { FieldValues, SubmitHandler, useForm, useWatch } from "react-hook-form";
+
+import { useFormHandler } from "../../../../hooks/useFormHandler.ts";
 import { Alert } from "./Alert";
 import { FormInput } from "./FormInput";
 import FormMessageInput from "./FormMessageInput";
 import FormCheckbox from "./FormCheckbox";
 import SubmitButton from "./SubmitButton";
 
-interface FormState {
-  isSuccess: boolean;
-  message: string;
-  isSubmitted: boolean;
-}
-
 export default function ContactForm() {
   const accessKey = import.meta.env.VITE_FORM_KEY as string;
   const accessURL = import.meta.env.VITE_FORM_URL as string;
 
-  const [formState, setFormState] = useState<FormState>({
-    isSuccess: false,
-    message: "",
-    isSubmitted: false,
-  });
-
   const {
     register,
-    handleSubmit,
-    setValue,
+    onSubmitHandler,
+    errors,
+    formState,
+    isSubmitting,
+    isSubmitSuccessful,
     reset,
-    control,
-    formState: { errors, isSubmitSuccessful, isSubmitting },
-  } = useForm({
-    mode: "onTouched",
-  });
-
-  // Watch used to update the subject field in the sent email
-  const userName = useWatch({
-    control,
-    name: "name",
-    defaultValue: "The Client",
-  });
-
-  useEffect(() => {
-    setValue("subject", `${userName} sent a message from Website`);
-  }, [userName, setValue]);
-
-  const onSubmit: SubmitHandler<FieldValues> = async (data, e) => {
-    setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
-
-    // Create a FormData object from the form
-    const formData = new FormData(e?.target as HTMLFormElement);
-
-    formData.append("access_key", data.accessKey);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    await fetch(accessURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    })
-      .then(async (response) => {
-        const json = await response.json();
-        if (json.success) {
-          setFormState((prevState) => ({
-            ...prevState,
-            isSuccess: true,
-            isSubmitted: false,
-            message: json.message,
-          }));
-
-          reset();
-        } else {
-          setFormState((prevState) => ({
-            ...prevState,
-            message: json.message,
-            isSuccess: false,
-          }));
-        }
-      })
-      .catch((error) => {
-        setFormState((prevState) => ({
-          ...prevState,
-          isSuccess: false,
-          isSubmitted: false,
-          message: "Client Error. Please check the console.log for more info",
-        }));
-        console.log(error);
-      });
-  };
+  } = useFormHandler(accessURL);
 
   return (
     <>
@@ -99,13 +27,7 @@ export default function ContactForm() {
         <h3 className={styles.title}>Formularz Kontaktowy</h3>
         <h1 className={styles.header}>NAPISZ DO NAS</h1>
         {!isSubmitSuccessful && (
-          <form
-            noValidate
-            className={styles.form}
-            onSubmit={handleSubmit(onSubmit, () =>
-              setFormState((prevState) => ({ ...prevState, isSubmitted: true }))
-            )}
-          >
+          <form noValidate className={styles.form} onSubmit={onSubmitHandler}>
             <input type="hidden" value={accessKey} {...register("accessKey")} />
             <input type="hidden" {...register("subject")} />
             <input type="hidden" value="SolarFlow" {...register("from_name")} />

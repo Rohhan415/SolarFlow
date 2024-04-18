@@ -1,6 +1,6 @@
 import PageNav from "../components/Navigation//NavigationBar";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
-import useTimer from "../hooks/useTimer";
+import { useTimer } from "../hooks/useTimer";
 import ContactForm from "../components/Sections/ContactPageSection/ContactForm";
 import Footer from "../components/Footer/Footer";
 

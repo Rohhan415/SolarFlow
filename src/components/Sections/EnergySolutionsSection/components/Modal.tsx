@@ -1,7 +1,7 @@
 import styles from "./modal.module.css";
 import { useModalContext } from "../../../../contexts/useModalContext";
 import { SolutionType } from "../EnergySolutionsSection";
-import useEscapeKey from "../../../../hooks/useEscapeKey";
+import { useEscapeKey } from "../../../../hooks/useEscapeKey";
 
 function Modal({ solution }: { solution: SolutionType }) {
   const { modalOpen, handleModalClose } = useModalContext();

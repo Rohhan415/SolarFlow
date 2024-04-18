@@ -1,6 +1,6 @@
 import PageNotFoundSection from "../components/Sections/PageNotFoundSection/PageNotFoundSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
-import useTimer from "../hooks/useTimer";
+import { useTimer } from "../hooks/useTimer";
 
 function PageNotFound() {
   const showSection = useTimer({ delay: 500 });

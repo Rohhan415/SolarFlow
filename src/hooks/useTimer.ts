@@ -4,7 +4,7 @@ interface TimerOptions {
   delay: number;
 }
 
-const useTimer = ({ delay }: TimerOptions) => {
+export const useTimer = ({ delay }: TimerOptions) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -17,5 +17,3 @@ const useTimer = ({ delay }: TimerOptions) => {
 
   return show;
 };
-
-export default useTimer;

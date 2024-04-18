@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function useEscapeKey(onEscape: () => void) {
+export function useEscapeKey(onEscape: () => void) {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -16,5 +16,3 @@ function useEscapeKey(onEscape: () => void) {
     };
   }, [onEscape]);
 }
-
-export default useEscapeKey;

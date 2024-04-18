@@ -78,13 +78,20 @@ export const useFormHandler = (accessURL: string) => {
           isSubmitted: false,
           message: "Client Error. Please check the console.log for more info",
         }));
+
         console.log(error);
       });
   };
 
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleSubmit(onSubmit)(e);
+    setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
+  };
+
   return {
     register,
-    handleSubmit: handleSubmit(onSubmit),
+    onSubmitHandler,
     errors,
     formState,
     isSubmitting,

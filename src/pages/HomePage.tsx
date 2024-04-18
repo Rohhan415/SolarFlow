@@ -4,7 +4,7 @@ import StartingPageSlider from "../components/Sections/StartingSliderSection/Sta
 import InstallationStepsSection from "../components/Sections/InstallationStepsSection/InstallationStepsSection";
 import StartingLoadingScreen from "../ui/StartingLoadingScreen";
 import Footer from "../components/Footer/Footer";
-import useTimer from "../hooks/useTimer";
+import { useTimer } from "../hooks/useTimer";
 import EnergySolutionsSection from "../components/Sections/EnergySolutionsSection/EnergySolutionsSection";
 
 function Homepage() {
