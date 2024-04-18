@@ -1,4 +1,23 @@
-export const formFields = [
+interface FormField {
+  title: string;
+  name: string;
+  placeholder: string;
+  type?: string;
+  validation: {
+    required: string;
+    maxLength?: {
+      value: number;
+      message: string;
+    };
+    pattern?: {
+      value: RegExp;
+      message: string;
+    };
+    validate?: (value: string) => boolean | string;
+  };
+}
+
+export const formFields: FormField[] = [
   {
     title: "Imię",
     name: "name",
