@@ -83,20 +83,14 @@ export default function ContactForm() {
                 placeholder="Telefon"
                 validation={{
                   required: "Podaj numer telefonu",
-                  pattern: {
-                    value: /^\d+$/,
-                    message: "Numer telefonu powinien zawierać tylko cyfry",
-                  },
-                  minLength: {
-                    value: 9,
-                    message:
-                      "Numer telefonu powinien zawierać co najmniej 9 cyfr",
-                  },
-                  maxLength: {
-                    value: 15,
-                    message:
-                      "Numer telefonu powinien zawierać nie więcej niż 15 cyfr",
-                  },
+                  validate: (value: string) =>
+                    !/^\d+$/.test(value)
+                      ? "Numer telefonu powinien zawierać tylko cyfry"
+                      : value.length < 9
+                      ? "Numer telefonu powinien zawierać co najmniej 9 cyfr"
+                      : value.length > 15
+                      ? "Numer telefonu powinien zawierać nie więcej niż 15 cyfr"
+                      : true,
                 }}
               />
             </div>
