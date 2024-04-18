@@ -1,5 +1,5 @@
 import styles from "./alert.module.css";
-import button from "./form.module.css";
+import button from "../Form/form.module.css";
 
 export const Alert = ({
   isSuccess,

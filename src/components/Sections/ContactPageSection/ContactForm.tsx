@@ -1,7 +1,7 @@
 import styles from "./contactForm.module.css";
-import Form from "./components/Form";
-import FormInfo from "./components/FormInfo";
-import BackgroundTop from "./components/BackgroundTop";
+import Form from "./components/Form/Form";
+import FormInfo from "./components/Info/FormInfo";
+import BackgroundTop from "./components/BackgroundTop/BackgroundTop";
 
 function ContactForm() {
   return (

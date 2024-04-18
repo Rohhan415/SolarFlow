@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./form.module.css";
+import styles from "../Form/form.module.css";
 
 interface SubmitButtonProps {
   isSubmitting: boolean;
