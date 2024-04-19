@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/*  Mobile: 320px - 480px
+ Tablet: 768px - 1024px
+ Desktop: 1200px - 1440px
+ Large Desktop: 1600px+ */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,6 +27,12 @@ body {
   height: 100%;
   font-family: "Montserrat", sans-serif;
   color: var(--text-white);
+}
+
+*:focus {
+  box-shadow: 0 0 0 0.1rem var(--pale-green);
+  border-radius: 2px;
+  outline: none;
 }
 
 #root {
@@ -34,4 +54,10 @@ body {
   --text-black: #333;
   --text-white: #eee;
   --steps-blue: #1e6091;
+}
+
+@media (max-width: 76em) {
+  html {
+    font-size: 50%;
+  }
 }

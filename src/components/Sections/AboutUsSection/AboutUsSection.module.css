@@ -12,13 +12,13 @@
   gap: 3rem;
 }
 
-.aboutUsColumnComposition {
+.Composition {
   flex: 1;
   position: relative;
   margin-right: 4.8rem;
 }
 
-.aboutUsColumnCompositionContact {
+.CompositionContact {
   position: absolute;
   background-color: var(--pale-green);
   left: 0;
@@ -31,7 +31,13 @@
   text-transform: uppercase;
 }
 
-.aboutUsColumnCompositionImage1 {
+.CompositionContact:focus {
+  box-shadow: 0 0 0 0.3rem black;
+  border-radius: 2px;
+  outline: none;
+}
+
+.CompositionImage1 {
   position: absolute;
   left: 0;
   top: -2rem;
@@ -39,7 +45,7 @@
   height: 48rem;
 }
 
-.aboutUsColumnCompositionImage2 {
+.CompositionImage2 {
   position: absolute;
   right: 0;
   top: 14rem;
@@ -47,19 +53,19 @@
   height: 40rem;
 }
 
-.aboutUsColumCompositionText {
+.CompositionText {
   flex: 1;
   line-height: 1.7em;
   font-weight: 500;
   font-size: 1.6rem;
 }
-.aboutUsColumCompositionTextParagraph {
+.CompositionTextParagraph {
   color: var(--pale-green);
   font-size: 1.4rem;
   line-height: 2.4rem;
   text-transform: uppercase;
 }
-.aboutUsColumCompositionTextHeader {
+.CompositionTextHeader {
   line-height: 1.3;
   text-transform: uppercase;
   font-size: 2.9rem;
@@ -67,11 +73,11 @@
   margin-bottom: 4rem;
 }
 
-.aboutUsColumCompositionTextEntry {
+.CompositionTextEntry {
   margin-bottom: 1.6rem;
 }
 
-.aboutUsColumCompositionTextSecondHeader {
+.CompositionTextSecondHeader {
   margin-bottom: 1.6rem;
 }
 
@@ -80,12 +86,12 @@
   font-weight: 700;
 }
 
-.aboutUsColumCompositionTextHeading {
+.CompositionTextHeading {
   position: relative;
 }
 
-.aboutUsColumCompositionTextHeading:before,
-.aboutUsColumCompositionTextHeading:after {
+.CompositionTextHeading:before,
+.CompositionTextHeading:after {
   content: "";
   position: absolute;
   width: 30px;
@@ -94,14 +100,99 @@
   z-index: 2;
 }
 
-.aboutUsColumCompositionTextHeading:before {
+.CompositionTextHeading:before {
   top: -15px;
-  left: -25px;
+  left: -15px;
   border-width: 2px 0 0 2px;
 }
 
-.aboutUsColumCompositionTextHeading:after {
+.CompositionTextHeading:after {
   bottom: -15px;
   right: -25px;
   border-width: 0 2px 2px 0;
+}
+
+@media (max-width: 76em) {
+  .CompositionTextHeading:after {
+    bottom: -15px;
+    right: -5px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+@media (max-width: 64em) {
+  .aboutUs {
+    flex-direction: column;
+    height: 150rem;
+    max-width: 108rem;
+    padding-bottom: 0;
+    flex: 0;
+  }
+
+  .CompositionImage1 {
+    left: 6rem;
+    top: -6rem;
+    width: 57.5rem;
+    height: 60rem;
+  }
+
+  .CompositionImage2 {
+    right: 6.7rem;
+    top: 8.9rem;
+    width: 45rem;
+    height: 51rem;
+  }
+
+  .CompositionContact {
+    position: absolute;
+    left: 6rem;
+    top: 54rem;
+    padding: 1.4rem;
+    width: 57.5rem;
+    font-size: 2rem;
+  }
+
+  .Composition {
+    margin: 0;
+  }
+
+  .CompositionTextHeader {
+    font-size: 3rem;
+  }
+
+  .CompositionTextHeading {
+    text-align: center;
+  }
+
+  .CompositionTextHeading:before {
+    top: 0px;
+    left: 50px;
+  }
+
+  .CompositionTextHeading:after {
+    bottom: 0px;
+    right: 50px;
+  }
+  .CompositionTextSecondHeader,
+  .CompositionTextEntry {
+    max-width: 95rem;
+    margin: 0 auto;
+  }
+  .CompositionTextSecondHeader {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .CompositionTextHeader {
+    margin-bottom: 8rem;
+  }
+
+  .CompositionTextEntry {
+    font-size: 1.8rem;
+  }
+
+  .aboutUsTextColor {
+    margin-top: 2rem;
+  }
 }

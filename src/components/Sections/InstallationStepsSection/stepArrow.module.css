@@ -1,0 +1,11 @@
+.arrow {
+  width: 10rem;
+  height: 6rem;
+  margin: auto;
+}
+
+@media (max-width: 64em) {
+  .arrow {
+    display: none;
+  }
+}

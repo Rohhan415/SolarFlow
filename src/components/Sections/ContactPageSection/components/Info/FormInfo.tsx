@@ -4,75 +4,98 @@ function FormInfo() {
   return (
     <>
       <div className={styles.details}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-10 h-10"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
-          />
-        </svg>
-
-        <p>Adres</p>
-        <h3>SolarFlow</h3>
-        <address itemType="http://schema.org/PostalAddress">
-          <p>Henryka Sienkiewicza 85/87</p>
-          <p>
-            <span itemProp="postalCode">90-057</span>{" "}
-            <span itemProp="addressLocality">Łódź</span>
-          </p>
-          <p>NIP: 389450-10-70</p>
-        </address>
-
-        <nav>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-10 h-10"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"
-            />
-          </svg>
-          <h3>Email</h3>
+        <div className={styles.detailsContainer}>
           <div>
-            <a href="mailto:solar1flow@gmail.com">solar1flow@gmail.com</a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-10 h-10"
+              className={styles.HighlightIcons}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
               />
             </svg>
-            <h3>Telefon</h3>
-            <p>
-              <span>Olaf:</span>
-              <a href="tel:+48 518 747 979"> 518 747 979</a>
-            </p>
-            <p>
-              <span>Dawid:</span>
-              <a href="tel:+48 510 266 548"> 510 266 548</a>
-            </p>
+
+            <h3 className={styles.header}>Adres:</h3>
+            <div className={styles.detailsDescription}>
+              <p className={styles.highlightColor}>SolarFlow</p>
+              <address itemType="http://schema.org/PostalAddress">
+                <p>Henryka Sienkiewicza 85/87</p>
+                <p>
+                  <span itemProp="postalCode">90-057</span>{" "}
+                  <span itemProp="addressLocality">Łódź</span>
+                </p>
+                <p>NIP: 389450-10-70</p>
+              </address>
+            </div>
           </div>
-        </nav>
+          <nav>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className={styles.HighlightIcons}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"
+              />
+            </svg>
+            <h3 className={styles.header}>Email:</h3>
+            <div>
+              <div
+                className={`${styles.detailsDescription} ${styles.moduleMargin}`}
+              >
+                <a href="mailto:solar1flow@gmail.com">solar1flow@gmail.com</a>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className={styles.HighlightIcons}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                />
+              </svg>
+              <h3 className={styles.header}>Telefon:</h3>
+              <div className={styles.detailsDescription}>
+                <p>
+                  <span>Olaf:</span>
+                  <a
+                    className={styles.highlightColor}
+                    href="tel:+48 518 747 979"
+                  >
+                    {" "}
+                    518 747 979
+                  </a>
+                </p>
+                <p>
+                  <span>Dawid:</span>
+                  <a
+                    className={styles.highlightColor}
+                    href="tel:+48 510 266 548"
+                  >
+                    {" "}
+                    510 266 548
+                  </a>
+                </p>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
     </>
   );

@@ -76,7 +76,8 @@ export const useFormHandler = (accessURL: string) => {
           ...prevState,
           isSuccess: false,
           isSubmitted: false,
-          message: "Client Error. Please check the console.log for more info",
+          message:
+            "Błąd klienta, po więcej informacji skontaktuj się z administratorem.",
         }));
 
         console.log(error);

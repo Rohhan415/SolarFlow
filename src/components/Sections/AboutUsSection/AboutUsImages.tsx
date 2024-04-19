@@ -6,18 +6,15 @@ import { NavLink } from "react-router-dom";
 function AboutUsImages() {
   return (
     <>
-      <div className={styles.aboutUsColumnComposition}>
+      <div className={styles.Composition}>
         <img
           src={image4}
           srcSet={`${image4} 1920w`}
           alt="About Us Section Image 1"
           loading="lazy"
-          className={styles.aboutUsColumnCompositionImage1}
+          className={styles.CompositionImage1}
         />
-        <NavLink
-          className={styles.aboutUsColumnCompositionContact}
-          to="/contact"
-        >
+        <NavLink className={styles.CompositionContact} to="/contact">
           Kontakt {`\u2192`}
         </NavLink>
 
@@ -26,7 +23,7 @@ function AboutUsImages() {
           srcSet={`${image9} 1920w`}
           alt="About Us Section Image 2"
           loading="lazy"
-          className={styles.aboutUsColumnCompositionImage2}
+          className={styles.CompositionImage2}
         />
       </div>
     </>

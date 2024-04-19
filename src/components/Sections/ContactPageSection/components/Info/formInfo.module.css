@@ -3,3 +3,41 @@
   color: var(--text-white);
   width: 60%;
 }
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 5rem;
+}
+
+.HighlightIcons {
+  background-color: var(--pale-green);
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 #fff;
+}
+
+.header {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.moduleMargin {
+  margin-bottom: 4rem;
+}
+.detailsDescription {
+  color: #fff;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.highlightColor {
+  color: var(--pale-green);
+}

@@ -1,3 +1,5 @@
+import styles from "./stepArrow.module.css";
+
 function StepArrow() {
   return (
     <svg
@@ -6,7 +8,7 @@ function StepArrow() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-40 h-24 m-auto"
+      className={styles.arrow}
     >
       <path
         strokeLinecap="round"

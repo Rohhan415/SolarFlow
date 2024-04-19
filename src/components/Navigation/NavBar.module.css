@@ -73,11 +73,9 @@
   justify-content: center;
   align-items: center;
   transition: all 0.4s;
-  overflow: hidden;
 }
 
-.NavList a:hover,
-.NavList a:focus {
+.NavList a:hover {
   border-radius: 8px;
   outline: none;
   box-shadow: none;

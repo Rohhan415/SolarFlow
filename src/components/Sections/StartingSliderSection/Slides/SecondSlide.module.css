@@ -88,8 +88,35 @@
   transition: all 0.2s linear 0s;
 }
 
+.slideButton:focus {
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 0 0.4rem black;
+}
+
 .slideButton:hover {
   background-color: var(--steps-blue);
   color: var(--color-white);
   box-shadow: inset 0 0 0 2px var(--pale-green);
+}
+
+@media (max-width: 76em) {
+  .slideButtonBorder:before {
+    top: -15px;
+    left: -182px;
+    border-width: 0 0 2px 2px;
+  }
+
+  .slideButtonBorder:after {
+    top: -15px;
+    right: -182px;
+    border-width: 0 2px 2px 0;
+  }
+
+  .slideMainTitle {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
 }
