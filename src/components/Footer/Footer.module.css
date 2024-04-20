@@ -107,3 +107,49 @@
 .footerInformationContactListBold {
   font-weight: 700;
 }
+
+@media (max-width: 64em) {
+  .footerFeatured {
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 2.1rem;
+  }
+
+  .footerHighlight {
+    gap: 3rem;
+  }
+
+  .footerInformation {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerImage {
+    width: 40rem;
+    height: 30rem;
+  }
+
+  .footerInformationHeading {
+    font-size: 2.4rem;
+  }
+
+  .footerInformationList {
+    font-size: 2.1rem;
+  }
+  .footerInformationListButton {
+    margin-bottom: 1.6rem;
+  }
+
+  .footerInformationContactList {
+    font-size: 2.1rem;
+    gap: 2rem;
+  }
+
+  .footerInformationAddressHeader {
+    font-size: 2.2rem;
+  }
+
+  .footerInformationAddressList {
+    font-size: 2.1rem;
+    gap: 2rem;
+  }
+}

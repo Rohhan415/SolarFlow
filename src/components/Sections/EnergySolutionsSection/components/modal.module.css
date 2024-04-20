@@ -164,3 +164,44 @@
   right: -1%; /* Adjust as needed */
   border-width: 0 2px 2px 0;
 }
+
+@media (max-width: 90em) {
+  .modalDescription {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 81em) {
+  .modalDescription {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 77em) {
+  .popupContent {
+    height: 85%;
+  }
+
+  .modalDescription {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 66em) {
+  .modalImage {
+    display: none;
+  }
+  .modalInformation {
+    margin: 6rem 6rem 0 6rem;
+  }
+
+  .modalDescription {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .modalDescription {
+    font-size: 1.7rem;
+  }
+}

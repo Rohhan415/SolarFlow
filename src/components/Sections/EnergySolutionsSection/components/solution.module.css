@@ -102,3 +102,29 @@
   background-color: var(--pale-green);
   opacity: 0.8;
 }
+
+@media (max-width: 64em) {
+  .imageContainer {
+    width: 100%;
+    height: 65rem;
+  }
+
+  .solutionImage {
+    width: 100%;
+    height: 65rem;
+  }
+
+  .imageButton {
+    font-size: 3rem;
+  }
+
+  .solutionTitle {
+    font-size: 4.4rem;
+    padding-bottom: 1rem;
+  }
+
+  .solutionDescription {
+    margin: 3rem 0 3rem 0;
+    font-size: 2.1rem;
+  }
+}

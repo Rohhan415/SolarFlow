@@ -6,6 +6,7 @@ function FooterInformation() {
   return (
     <div className={styles.footerInformation}>
       <img
+        className={styles.footerImage}
         loading="lazy"
         src={Logo}
         alt="Logo Firmy"
