@@ -56,7 +56,7 @@ body {
   --steps-blue: #1e6091;
 }
 
-@media (max-width: 76em) {
+@media (max-width: 77em) {
   html {
     font-size: 50%;
   }

@@ -13,3 +13,10 @@
   padding: 10rem 0;
   gap: 6.4rem;
 }
+
+@media (max-width: 64em) {
+  .energySolutions {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 0;
+  }
+}

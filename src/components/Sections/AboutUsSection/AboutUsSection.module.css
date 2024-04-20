@@ -108,11 +108,11 @@
 
 .CompositionTextHeading:after {
   bottom: -15px;
-  right: -25px;
+  right: -10px;
   border-width: 0 2px 2px 0;
 }
 
-@media (max-width: 76em) {
+@media (max-width: 78em) {
   .CompositionTextHeading:after {
     bottom: -15px;
     right: -5px;
@@ -157,7 +157,7 @@
   }
 
   .CompositionTextHeader {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .CompositionTextHeading {
@@ -166,12 +166,12 @@
 
   .CompositionTextHeading:before {
     top: 0px;
-    left: 50px;
+    left: 45px;
   }
 
   .CompositionTextHeading:after {
-    bottom: 0px;
-    right: 50px;
+    bottom: -15px;
+    right: 45px;
   }
   .CompositionTextSecondHeader,
   .CompositionTextEntry {
@@ -179,7 +179,7 @@
     margin: 0 auto;
   }
   .CompositionTextSecondHeader {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -189,10 +189,14 @@
   }
 
   .CompositionTextEntry {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
 
   .aboutUsTextColor {
     margin-top: 2rem;
+  }
+
+  .CompositionTextParagraph {
+    font-size: 2rem;
   }
 }

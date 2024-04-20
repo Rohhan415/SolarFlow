@@ -27,9 +27,9 @@
 }
 
 .installationStepNumbers {
-  background-color: var(--pale-green);
-  border-radius: 50%;
-  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 8rem;
   width: 8rem;
   padding: 2.1rem 0;
@@ -38,9 +38,15 @@
 
 .installationStepNumbersText {
   display: flex;
+  background-color: var(--pale-green);
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  padding: 0.6rem;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 20px;
   font-weight: 800;
   text-transform: uppercase;
@@ -75,11 +81,42 @@
   font-weight: 300;
 }
 
+@media (max-width: 77em) {
+  .installationStepNumbersText {
+    height: 11rem;
+    width: 11rem;
+    font-size: 2rem;
+  }
+
+  .installationStepNumbers {
+    height: 11rem;
+    width: 11rem;
+  }
+}
+
 @media (max-width: 64em) {
   .installationSteps {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    max-width: 60%;
+    gap: 8rem;
+  }
+  .installationStepNumbers {
+    margin-bottom: 4.375rem;
+  }
+
+  .installationStepContainer {
+    gap: 1rem;
+  }
+
+  .moduleHeader {
+    font-size: 2.4rem;
+  }
+
+  .StepNumbersParagraph {
+    font-size: 1.9rem;
   }
 }

@@ -50,3 +50,23 @@
   text-align: center;
   padding-top: 1.6rem;
 }
+
+@media (max-width: 64em) {
+  .moduleHeader {
+    font-size: 4rem;
+  }
+
+  .moduleHeaderWrapper:before {
+    top: -15px;
+    left: 50px;
+  }
+
+  .moduleHeaderWrapper:after {
+    bottom: 15px;
+    right: 50px;
+  }
+
+  .moduleHeaderDescription {
+    font-size: 2.1rem;
+  }
+}
