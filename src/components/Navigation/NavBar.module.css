@@ -1,6 +1,6 @@
 .fixedHeader {
   position: fixed;
-  z-index: 15;
+  z-index: 30;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -94,30 +94,52 @@
   height: 7.4rem;
 }
 
-/* Smaller Desktop Screen breakpoints */
-@media (max-width: 90em) {
-  .navigationBar {
-    padding: 0 10rem;
-  }
-
-  .navigationBarMove {
-    padding: 0 10rem;
-  }
+.mobileNavList {
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-direction: column;
 }
-/* Smaller Desktop Screen breakpoints */
-@media (max-width: 61.25em) {
-  .navigationBar {
-    padding: 0 10rem;
-  }
-
-  .navigationBarMove {
-    padding: 0 10rem;
-  }
+.modalContainer {
+  z-index: 40;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  font-size: 2.1rem;
+  background-color: var(--dark-blue);
+  backdrop-filter: blur(20px);
+  opacity: 0.9;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
 }
 
-@media (max-width: 44em) {
+.modalContainer.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 64em) {
   .navigationBar {
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-blue);
+    padding: 0 10rem;
+  }
+
+  .navButtonMobile {
+    z-index: 41;
+    padding: 0;
+  }
+
+  .containerMove {
+    height: 10rem;
   }
   .navLogo {
     z-index: 23;
@@ -141,15 +163,20 @@
   }
 
   .NavList {
+    display: none;
+  }
+
+  /* .NavList {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: fixed;
     left: 0;
     gap: 5rem;
     width: 40%;
     height: 100%;
     transition: all 0.3s ease-in-out;
-  }
+  } */
 
   .NavList.hidden {
     transform: translateX(-100%); /* Slide out to the left */

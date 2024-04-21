@@ -40,7 +40,7 @@ export const NavBarProvider: FunctionComponent<NavBarProviderProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth > 704) {
+      if (window.innerWidth > 1024) {
         setScrollWatcher((prevState) => {
           return {
             y: window.scrollY,
@@ -48,12 +48,18 @@ export const NavBarProvider: FunctionComponent<NavBarProviderProps> = ({
           };
         });
         setShowNavigation(window.scrollY > 1 || scrollWatcher.y > 1);
+      } else {
+        setShowNavigation(false);
       }
     };
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [scrollWatcher.y]);
 
   return (
