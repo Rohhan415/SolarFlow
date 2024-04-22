@@ -83,14 +83,14 @@
 
 @media (max-width: 77em) {
   .installationStepNumbersText {
-    height: 11rem;
-    width: 11rem;
+    height: 13rem;
+    width: 13rem;
     font-size: 2rem;
   }
 
   .installationStepNumbers {
-    height: 11rem;
-    width: 11rem;
+    height: 13rem;
+    width: 13rem;
   }
 }
 
@@ -118,5 +118,14 @@
 
   .StepNumbersParagraph {
     font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .StepNumbersParagraph {
+    font-size: 2.4rem;
+  }
+  .moduleHeader {
+    font-size: 2.8rem;
   }
 }

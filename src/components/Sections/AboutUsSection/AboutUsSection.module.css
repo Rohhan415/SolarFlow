@@ -116,7 +116,6 @@
   .CompositionTextHeading:after {
     bottom: -15px;
     right: -5px;
-    border-width: 0 2px 2px 0;
   }
 }
 
@@ -198,5 +197,72 @@
 
   .CompositionTextParagraph {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 53.125em) {
+  .CompositionTextHeading:before {
+    top: -15px;
+    left: 36px;
+  }
+
+  .CompositionTextHeading:after {
+    right: 36px;
+  }
+}
+
+@media (max-width: 48em) {
+  .aboutUs {
+    height: auto;
+    gap: 8rem;
+  }
+
+  .Composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .CompositionText {
+    font-size: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .CompositionTextHeader {
+    font-size: 3.2rem;
+    max-width: 75%;
+    margin: 0 auto 8rem;
+  }
+
+  .aboutUsTextColor {
+    padding-bottom: 6rem;
+  }
+
+  .CompositionImage1 {
+    position: static;
+  }
+
+  .CompositionContact {
+    text-align: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    position: static;
+    height: 7.2rem;
+  }
+  .CompositionContact,
+  .CompositionImage1,
+  .CompositionImage2 {
+    width: 75%;
+  }
+
+  .CompositionImage1,
+  .CompositionImage2 {
+    height: 80rem;
+  }
+
+  .CompositionImage2 {
+    position: static;
   }
 }

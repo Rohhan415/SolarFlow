@@ -70,3 +70,11 @@
     font-size: 2.1rem;
   }
 }
+
+@media (max-width: 48em) {
+  .moduleHeader {
+    font-size: 3.2rem;
+    max-width: 75%;
+    margin: 0 auto 6rem;
+  }
+}

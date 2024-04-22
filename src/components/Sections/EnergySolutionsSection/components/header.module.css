@@ -5,6 +5,7 @@
   text-transform: uppercase;
   font-size: 2.9rem;
   font-weight: 700;
+  max-width: 130rem;
   margin-bottom: 2rem;
 }
 
@@ -97,5 +98,36 @@
     margin-top: 4rem;
     font-size: 2.1rem;
     line-height: 3.6rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .moduleHeader {
+    font-size: 3rem;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  .moduleHeaderWrapper:before {
+    top: -10px;
+    left: 30px;
+  }
+
+  .moduleHeaderWrapper:after {
+    right: 30px;
+    bottom: -10px;
+  }
+
+  .moduleHeaderDescription {
+    font-size: 2.1rem;
+    line-height: 3rem;
+    width: 80%;
+  }
+
+  .moduleHeaderParagraph {
+    font-size: 1.8rem;
+    max-width: 75%;
+    margin: 1rem auto 0;
+    line-height: 2rem;
   }
 }
