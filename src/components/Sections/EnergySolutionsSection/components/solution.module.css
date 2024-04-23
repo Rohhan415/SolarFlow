@@ -125,6 +125,27 @@
 
   .solutionDescription {
     margin: 3rem 0 3rem 0;
-    font-size: 2.1rem;
+    font-size: 2.4rem;
+    line-height: 5rem;
+  }
+}
+
+@media (max-width: 49em) {
+  .imageContainer {
+    height: 40rem;
+  }
+
+  .solutionImage {
+    height: 40rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .imageContainer {
+    height: 30rem;
+  }
+
+  .solutionImage {
+    height: 30rem;
   }
 }

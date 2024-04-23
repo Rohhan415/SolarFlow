@@ -68,6 +68,11 @@
   padding: 0.6rem;
 }
 
+.footerHighlightIconsSvg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .footerInformationList {
   font-size: 1.6rem;
 }
@@ -119,6 +124,11 @@
     gap: 3rem;
   }
 
+  .footerHighlightIconsSvg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
   .footerInformation {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -151,5 +161,49 @@
   .footerInformationAddressList {
     font-size: 2.1rem;
     gap: 2rem;
+  }
+
+  .footerHighlightIcons {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .imageContainer {
+    height: 30rem;
+  }
+
+  .footerHighlightIcons {
+    padding: 2.1rem;
+  }
+
+  .footerInformation {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5rem;
+  }
+
+  .footerInformationHeading {
+    font-size: 3.4rem;
+  }
+
+  .footerInformationContactList {
+    font-size: 2.6rem;
+  }
+
+  .footerInformationAddressList {
+    font-size: 2.6rem;
+  }
+
+  .footerInformationList {
+    font-size: 2.6rem;
+  }
+
+  .footerFeatured {
+    font-size: 2.6rem;
+  }
+
+  .footerHighlightIconsSvg {
+    width: 4.2rem;
+    height: 4.2rem;
   }
 }

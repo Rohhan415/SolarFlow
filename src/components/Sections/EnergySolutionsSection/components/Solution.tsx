@@ -6,21 +6,35 @@ interface SolutionProps {
   title: string;
   description: string;
   imgSrc: string;
+  srcSet: string;
   onImageClick: () => void;
 }
 
-function Solution({ title, description, imgSrc, onImageClick }: SolutionProps) {
+function Solution({
+  title,
+  description,
+  imgSrc,
+  srcSet,
+  onImageClick,
+}: SolutionProps) {
   const { handleModalOpen } = useModalContext();
+
+  console.log(srcSet);
 
   const handleClick = () => {
     handleModalOpen();
-    onImageClick(); 
+    onImageClick();
   };
 
   return (
     <div className={styles.solutionContainer}>
       <div className={styles.imageContainer}>
-        <img className={styles.solutionImage} src={imgSrc} alt="Solution" />
+        <img
+          className={styles.solutionImage}
+          src={imgSrc}
+          srcSet={srcSet}
+          alt="Solution"
+        />
         <button className={styles.imageButton} onClick={handleClick}>
           Zobacz więcej
         </button>

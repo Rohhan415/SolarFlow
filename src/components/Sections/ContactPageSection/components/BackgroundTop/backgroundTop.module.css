@@ -48,3 +48,14 @@
   right: -10px;
   border-width: 0 2px 2px 0;
 }
+
+@media (max-width: 64em) {
+  .headerContainer {
+    font-size: 6rem;
+    justify-content: center;
+  }
+
+  .background {
+    background-image: url(../../../../../assets/image4-medium.jpg);
+  }
+}

@@ -35,6 +35,7 @@ function EnergySolutionsSection() {
             title={solution.title}
             description={solution.description}
             imgSrc={solution.imgSrc}
+            srcSet={solution.srcSet}
             onImageClick={() => handleSolutionClick(solution)}
           />
         ))}

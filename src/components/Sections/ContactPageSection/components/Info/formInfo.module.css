@@ -41,3 +41,28 @@
 .highlightColor {
   color: var(--pale-green);
 }
+
+@media (max-width: 64em) {
+  .details {
+    width: 100%;
+  }
+  .detailsContainer {
+    margin: 15rem;
+    font-size: 5rem;
+  }
+  .header {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .detailsDescription {
+    font-size: 3rem;
+    line-height: 6rem;
+  }
+
+  .HighlightIcons {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 4rem;
+  }
+}

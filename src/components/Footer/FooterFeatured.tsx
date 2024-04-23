@@ -11,7 +11,7 @@ function FooterFeatured() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10"
+            className={styles.footerHighlightIconsSvg}
           >
             <path
               strokeLinecap="round"
@@ -30,7 +30,7 @@ function FooterFeatured() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10"
+            className={styles.footerHighlightIconsSvg}
           >
             <path
               strokeLinecap="round"
@@ -49,7 +49,7 @@ function FooterFeatured() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10"
+            className={styles.footerHighlightIconsSvg}
           >
             <path
               strokeLinecap="round"
