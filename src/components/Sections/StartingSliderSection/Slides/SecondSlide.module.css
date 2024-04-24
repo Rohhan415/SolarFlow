@@ -10,10 +10,10 @@
   color: #fff;
 }
 
-.slideTitle:before,
-.slideTitle:after,
-.slideInformation:before,
-.slideInformation:after {
+.slideTitle::before,
+.slideTitle::after,
+.slideInformation::before,
+.slideInformation::after {
   content: "";
   position: absolute;
   width: 6rem;
@@ -22,25 +22,25 @@
   z-index: 2;
 }
 
-.slideTitle:before {
+.slideTitle::before {
   top: -10px;
   left: -60px;
   border-width: 2px 0 0 2px;
 }
 
-.slideTitle:after {
+.slideTitle::after {
   top: -10px;
   right: -60px;
   border-width: 2px 2px 0 0;
 }
 
-.slideInformation:before {
+.slideInformation::before {
   bottom: -70px;
   left: -4px;
   border-width: 0 0 2px 2px;
 }
 
-.slideInformation:after {
+.slideInformation::after {
   bottom: -70px;
   right: -4px;
   border-width: 0 2px 2px 0;
@@ -102,13 +102,13 @@
 }
 
 @media (max-width: 76em) {
-  .slideInformation:before {
+  .slideInformation::before {
     bottom: -70px;
     left: -16px;
     border-width: 0 0 2px 2px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     bottom: -70px;
     right: -16px;
     border-width: 0 2px 2px 0;
@@ -123,12 +123,18 @@
   }
 }
 
+/* ...existing CSS... */
+
+@media (max-width: 76em) {
+  /* ...existing CSS... */
+}
+
 @media (max-width: 53.125em) {
-  .slideInformation:before {
+  .slideInformation::before {
     left: -25px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     right: -25px;
   }
 
@@ -148,19 +154,19 @@
     max-width: 75%;
   }
 
-  .slideInformation:before {
+  .slideInformation::before {
     left: 14px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     right: 14px;
   }
 
-  .slideTitle:before {
+  .slideTitle::before {
     left: -21px;
   }
 
-  .slideTitle:after {
+  .slideTitle::after {
     right: -21px;
   }
 }
@@ -170,30 +176,18 @@
     font-size: 4.3rem;
   }
 
-  .slideButtonBorder:before,
-  .slideButtonBorder:after {
+  .slideButtonBorder::before,
+  .slideButtonBorder::after {
     display: none;
   }
 
-  .slideInformation:before,
-  .slideInformation:after {
-    content: "";
-    position: relative;
-    width: 6rem;
-    height: 6rem;
-    border: 2px solid var(--pale-green);
-    z-index: 2;
-  }
-
-  .slideInformation:before {
-    position: absolute;
+  .slideInformation::before {
     bottom: -70px;
     left: -21px;
     border-width: 0 0 2px 2px;
   }
 
-  .slideInformation:after {
-    position: absolute;
+  .slideInformation::after {
     bottom: -70px;
     right: -21px;
     border-width: 0 2px 2px 0;

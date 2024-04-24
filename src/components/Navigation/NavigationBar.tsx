@@ -1,14 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import Logo from "../../assets/logo-no-background.png";
 import { useNavBarContext } from "../../contexts/useNavBarContext";
 import MobileNavigationBar from "./MobileNavigationBar";
 
 function NavigationBar() {
-  const { showNavigation, activeMobileNavBar, toggleOpen } = useNavBarContext();
+  const { showNavigation, activeMobileNavBar, isMobile, toggleOpen } =
+    useNavBarContext();
 
+  const location = useLocation();
+
+  const headerClass =
+    location.pathname === "/policy"
+      ? styles.fixedHeaderPolicy
+      : styles.fixedHeader;
   return (
-    <header className={styles.fixedHeader}>
+    <header className={headerClass}>
       <div
         className={
           showNavigation ? `${styles.containerMove}` : `${styles.container} `
@@ -74,7 +81,7 @@ function NavigationBar() {
             </svg>
           )}
 
-          <MobileNavigationBar />
+          {isMobile && <MobileNavigationBar />}
 
           <ul className={`${styles.NavList} `}>
             <li className={styles.navButton}>

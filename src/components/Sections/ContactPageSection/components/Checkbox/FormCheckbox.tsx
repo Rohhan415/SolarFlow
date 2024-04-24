@@ -1,6 +1,6 @@
 import React from "react";
 import { UseFormRegister, FieldErrors, FieldValues } from "react-hook-form";
-import styles from "../Form/form.module.css";
+import styles from "./FormChceckbox.module.css";
 
 interface FormState {
   isSuccess: boolean;

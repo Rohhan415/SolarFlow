@@ -1,4 +1,4 @@
-import styles from "./InstallationStepsSection.module.css";
+import styles from "./StepsDescription.module.css";
 
 interface StepsDescriptionProps {
   title: string;

@@ -10,10 +10,10 @@
   color: #fff;
 }
 
-.slideTitle:before,
-.slideTitle:after,
-.slideInformation:before,
-.slideInformation:after {
+.slideTitle::before,
+.slideTitle::after,
+.slideInformation::before,
+.slideInformation::after {
   content: "";
   position: absolute;
   width: 6rem;
@@ -22,25 +22,25 @@
   z-index: 2;
 }
 
-.slideTitle:before {
+.slideTitle::before {
   top: -10px;
   left: -60px;
   border-width: 2px 0 0 2px;
 }
 
-.slideTitle:after {
+.slideTitle::after {
   top: -10px;
   right: -61px;
   border-width: 2px 2px 0 0;
 }
 
-.slideInformation:before {
+.slideInformation::before {
   bottom: -70px;
   left: -37px;
   border-width: 0 0 2px 2px;
 }
 
-.slideInformation:after {
+.slideInformation::after {
   bottom: -70px;
   right: -38px;
   border-width: 0 2px 2px 0;
@@ -102,13 +102,13 @@
 }
 
 @media (max-width: 76em) {
-  .slideInformation:before {
+  .slideInformation::before {
     bottom: -70px;
     left: -37px;
     border-width: 0 0 2px 2px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     bottom: -70px;
     right: -42px;
     border-width: 0 2px 2px 0;
@@ -134,12 +134,12 @@
 }
 
 @media (max-width: 53.125em) {
-  .slideInformation:before {
+  .slideInformation::before {
     bottom: -70px;
     left: -45px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     bottom: -70px;
     right: -45px;
   }
@@ -160,19 +160,19 @@
     max-width: 75%;
   }
 
-  .slideInformation:before {
+  .slideInformation::before {
     left: -6px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     right: -7px;
   }
 
-  .slideTitle:before {
+  .slideTitle::before {
     left: -21px;
   }
 
-  .slideTitle:after {
+  .slideTitle::after {
     right: -21px;
   }
 }
@@ -182,13 +182,13 @@
     font-size: 4.3rem;
   }
 
-  .slideButtonBorder:before,
-  .slideButtonBorder:after {
+  .slideButtonBorder::before,
+  .slideButtonBorder::after {
     display: none;
   }
 
-  .slideInformation:before,
-  .slideInformation:after {
+  .slideInformation::before,
+  .slideInformation::after {
     content: "";
     position: relative;
     width: 6rem;
@@ -197,14 +197,14 @@
     z-index: 2;
   }
 
-  .slideInformation:before {
+  .slideInformation::before {
     position: absolute;
     bottom: -70px;
     left: -21px;
     border-width: 0 0 2px 2px;
   }
 
-  .slideInformation:after {
+  .slideInformation::after {
     position: absolute;
     bottom: -70px;
     right: -21px;

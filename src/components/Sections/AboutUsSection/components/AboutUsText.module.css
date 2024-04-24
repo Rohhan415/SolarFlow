@@ -1,0 +1,140 @@
+.CompositionText {
+  flex: 1;
+  line-height: 1.7em;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.CompositionTextParagraph {
+  color: var(--pale-green);
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+}
+.CompositionTextHeader {
+  line-height: 1.3;
+  text-transform: uppercase;
+  font-size: 2.9rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
+.CompositionTextEntry {
+  margin-bottom: 1.6rem;
+}
+
+.CompositionTextSecondHeader {
+  margin-bottom: 1.6rem;
+}
+
+.aboutUsTextColor {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.CompositionTextHeading {
+  position: relative;
+}
+
+.CompositionTextHeading:before,
+.CompositionTextHeading:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--pale-green);
+  z-index: 2;
+}
+
+.CompositionTextHeading:before {
+  top: -15px;
+  left: -15px;
+  border-width: 2px 0 0 2px;
+}
+
+.CompositionTextHeading:after {
+  bottom: -15px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+@media (max-width: 78em) {
+  .CompositionTextHeading:after {
+    bottom: -15px;
+    right: -5px;
+  }
+}
+
+@media (max-width: 64em) {
+  .CompositionTextHeader {
+    font-size: 4rem;
+  }
+
+  .CompositionTextHeading {
+    text-align: center;
+  }
+
+  .CompositionTextHeading:before {
+    top: 0px;
+    left: 45px;
+  }
+
+  .CompositionTextHeading:after {
+    bottom: -15px;
+    right: 45px;
+  }
+  .CompositionTextSecondHeader,
+  .CompositionTextEntry {
+    max-width: 95rem;
+    margin: 0 auto;
+  }
+  .CompositionTextSecondHeader {
+    font-size: 2.1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .CompositionTextHeader {
+    margin-bottom: 8rem;
+  }
+
+  .CompositionTextEntry {
+    font-size: 2.1rem;
+  }
+
+  .aboutUsTextColor {
+    margin-top: 2rem;
+  }
+
+  .CompositionTextParagraph {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 53.125em) {
+  .CompositionTextHeading:before {
+    top: -15px;
+    left: 36px;
+  }
+
+  .CompositionTextHeading:after {
+    right: 36px;
+  }
+}
+
+@media (max-width: 48em) {
+  .CompositionText {
+    font-size: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .CompositionTextHeader {
+    font-size: 3.2rem;
+    max-width: 75%;
+    margin: 0 auto 8rem;
+  }
+
+  .aboutUsTextColor {
+    padding-bottom: 6rem;
+  }
+}

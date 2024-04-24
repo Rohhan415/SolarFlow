@@ -4,6 +4,7 @@ interface TimerOptions {
   delay: number;
 }
 
+// Function that is responsible for setting the timer
 export const useTimer = ({ delay }: TimerOptions) => {
   const [show, setShow] = useState(false);
 

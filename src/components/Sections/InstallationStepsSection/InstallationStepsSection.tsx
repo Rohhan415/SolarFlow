@@ -1,7 +1,7 @@
 import styles from "./InstallationStepsSection.module.css";
-import SectionHeader from "./SectionHeader";
-import StepArrow from "./StepArrow";
-import StepsDescription from "./StepsDescription";
+import SectionHeader from "./components/SectionHeader";
+import StepArrow from "../../../ui/StepArrow";
+import StepsDescription from "./components/StepsDescription";
 
 function InstallationStepsSection() {
   return (

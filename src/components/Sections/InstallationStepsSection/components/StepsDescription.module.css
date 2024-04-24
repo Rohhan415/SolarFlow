@@ -1,0 +1,89 @@
+.installationStepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.installationStepNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  width: 8rem;
+  padding: 2.1rem 0;
+  margin-bottom: 1rem;
+}
+
+.installationStepNumbersText {
+  display: flex;
+  background-color: var(--pale-green);
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  padding: 0.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.7s ease 0.5s;
+}
+
+.moduleHeader {
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.8rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.StepNumbersParagraph {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  font-weight: 300;
+}
+
+@media (max-width: 77em) {
+  .installationStepNumbersText {
+    height: 13rem;
+    width: 13rem;
+    font-size: 2rem;
+  }
+
+  .installationStepNumbers {
+    height: 13rem;
+    width: 13rem;
+  }
+}
+
+@media (max-width: 64em) {
+  .installationStepNumbers {
+    margin-bottom: 4.375rem;
+  }
+
+  .installationStepContainer {
+    gap: 1rem;
+  }
+
+  .moduleHeader {
+    font-size: 2.4rem;
+  }
+
+  .StepNumbersParagraph {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .StepNumbersParagraph {
+    font-size: 2.4rem;
+  }
+  .moduleHeader {
+    font-size: 2.8rem;
+  }
+}

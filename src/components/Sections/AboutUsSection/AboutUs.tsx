@@ -1,7 +1,7 @@
 import styles from "./AboutUsSection.module.css";
 
-import AboutUsImages from "./AboutUsImages";
-import AboutUsText from "./AboutUsText";
+import AboutUsImages from "./components/AboutUsImages";
+import AboutUsText from "./components/AboutUsText";
 
 function AboutUs() {
   return (

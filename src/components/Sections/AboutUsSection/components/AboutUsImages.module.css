@@ -1,0 +1,117 @@
+.Composition {
+  flex: 1;
+  position: relative;
+  margin-right: 4.8rem;
+}
+
+.CompositionContact {
+  position: absolute;
+  background-color: var(--pale-green);
+  left: 0;
+  top: 46rem;
+  padding: 1.4rem;
+  width: 23rem;
+  font-size: 1.4rem;
+  color: var(--text-white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.CompositionContact:focus {
+  box-shadow: 0 0 0 0.3rem black;
+  border-radius: 2px;
+  outline: none;
+}
+
+.CompositionImage1 {
+  position: absolute;
+  left: 0;
+  top: -2rem;
+  width: 46rem;
+  height: 48rem;
+}
+
+.CompositionImage2 {
+  position: absolute;
+  right: 0;
+  top: 14rem;
+  width: 36rem;
+  height: 40rem;
+}
+
+@media (max-width: 64em) {
+  .CompositionImage1 {
+    left: 6rem;
+    top: -6rem;
+    width: 57.5rem;
+    height: 60rem;
+  }
+
+  .CompositionImage2 {
+    right: 6.7rem;
+    top: 8.9rem;
+    width: 45rem;
+    height: 51rem;
+  }
+
+  .CompositionContact {
+    position: absolute;
+    left: 6rem;
+    top: 54rem;
+    padding: 1.4rem;
+    width: 57.5rem;
+    font-size: 2rem;
+  }
+
+  .Composition {
+    margin: 0;
+  }
+}
+
+@media (max-width: 48em) {
+  .Composition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .CompositionTextHeader {
+    font-size: 3.2rem;
+    max-width: 75%;
+    margin: 0 auto 8rem;
+  }
+
+  .CompositionImage1 {
+    position: static;
+  }
+
+  .CompositionContact {
+    text-align: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    position: static;
+    height: 7.2rem;
+  }
+  .CompositionContact,
+  .CompositionImage1,
+  .CompositionImage2 {
+    width: 75%;
+  }
+
+  .CompositionImage1,
+  .CompositionImage2 {
+    height: 80rem;
+  }
+
+  .CompositionImage2 {
+    position: static;
+  }
+}
+
+@media (max-width: 30em) {
+  .CompositionImage1,
+  .CompositionImage2 {
+    height: 60rem;
+  }
+}

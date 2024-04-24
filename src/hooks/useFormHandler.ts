@@ -7,6 +7,7 @@ interface FormState {
   isSubmitted: boolean;
 }
 
+// Function that is responsible for setting the form
 export const useFormHandler = (accessURL: string) => {
   const [formState, setFormState] = useState<FormState>({
     isSuccess: false,
@@ -14,6 +15,7 @@ export const useFormHandler = (accessURL: string) => {
     isSubmitted: false,
   });
 
+  // Elements responsible for handling the form from the library react-hook-form
   const {
     register,
     handleSubmit,
@@ -25,6 +27,7 @@ export const useFormHandler = (accessURL: string) => {
     mode: "onTouched",
   });
 
+  //Watch the value of the name field for email Title
   const userName = useWatch({
     control,
     name: "name",
@@ -35,6 +38,7 @@ export const useFormHandler = (accessURL: string) => {
     setValue("subject", `${userName} sent a message from Website`);
   }, [userName, setValue]);
 
+  // Async function that is responsible for sending the form
   const onSubmit: SubmitHandler<FieldValues> = async (data, e) => {
     setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
 
@@ -79,7 +83,7 @@ export const useFormHandler = (accessURL: string) => {
           message:
             "Błąd klienta, po więcej informacji skontaktuj się z administratorem.",
         }));
-
+        // console log for development, delete before production
         console.log(error);
       });
   };

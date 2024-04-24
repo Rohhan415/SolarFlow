@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// Function that is responsible for handling the escape key
 export function useEscapeKey(onEscape: () => void) {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -10,7 +11,6 @@ export function useEscapeKey(onEscape: () => void) {
 
     document.addEventListener("keydown", handleEsc);
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("keydown", handleEsc);
     };

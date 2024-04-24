@@ -1,5 +1,6 @@
-import "hero-slider/dist/index.css";
+import "hero-slider/dist/index.css"; // Without it the slider won't work
 import HeroSlider, { Slide, Nav, SideNav, AutoplayButton } from "hero-slider";
+import styles from "./startingPageSlider.module.css";
 
 import img1 from "../../../assets/image1.jpg";
 import img1x1024w from "../../../assets/image1-1024w.jpg";
@@ -35,8 +36,7 @@ export default function StartingPageSlider() {
         <Nav />
         <SideNav />
         <SideNav isPositionedRight={false} />
-        <AutoplayButton style={{ color: "#eee" }} />
-
+        <AutoplayButton className={styles.btn} style={{ color: "#eee" }} />
         <Slide
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
@@ -51,7 +51,6 @@ export default function StartingPageSlider() {
         >
           <FirstSlide />
         </Slide>
-
         <Slide
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",
@@ -66,7 +65,6 @@ export default function StartingPageSlider() {
         >
           <SecondSlide />
         </Slide>
-
         <Slide
           background={{
             backgroundColor: "rgba(0,0,0,0.5)",

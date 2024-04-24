@@ -18,6 +18,7 @@ interface NavBarProviderProps {
 interface NavBarContextProps {
   scrollWatcher: ScrollWatcher;
   showNavigation: boolean;
+  isMobile: boolean;
   activeMobileNavBar: boolean;
   toggleOpen: () => void;
 }
@@ -33,6 +34,20 @@ export const NavBarProvider: FunctionComponent<NavBarProviderProps> = ({
   });
   const [showNavigation, setShowNavigation] = useState<boolean>(true);
   const [activeMobileNavBar, setActiveMobileNavBar] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleOpen = () => {
     setActiveMobileNavBar(!activeMobileNavBar);
@@ -64,7 +79,13 @@ export const NavBarProvider: FunctionComponent<NavBarProviderProps> = ({
 
   return (
     <NavBarContext.Provider
-      value={{ scrollWatcher, showNavigation, activeMobileNavBar, toggleOpen }}
+      value={{
+        scrollWatcher,
+        showNavigation,
+        activeMobileNavBar,
+        isMobile,
+        toggleOpen,
+      }}
     >
       {children}
     </NavBarContext.Provider>

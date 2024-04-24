@@ -10,16 +10,33 @@
   align-items: center;
   transition: all 0.4s ease-in-out;
   color: white;
-  width: 110%;
+  width: 110%; /* over 100% to fully cover the screen */
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+}
+
+.fixedHeaderPolicy {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 50%;
+  right: 0;
+  top: 0;
+  transform: translateX(-50%);
+  border: none;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+  color: white;
+  width: 110%; /* over 100% to fully cover the screen */
+  margin: 0 auto;
+  background-color: rgba(3, 41, 71, 0.8);
   text-transform: uppercase;
 }
 
 .navigationBar,
 .navigationBarMove {
   display: inline-flex;
-
   flex-grow: 1;
   justify-content: space-between;
   padding: 0 20rem;
@@ -33,6 +50,7 @@
   display: none;
   z-index: 10;
 }
+
 .container {
   z-index: 10;
   display: flex;

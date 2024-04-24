@@ -1,4 +1,4 @@
-import styles from "./AboutUsSection.module.css";
+import styles from "./AboutUsText.module.css";
 
 function AboutUsText() {
   return (
