@@ -19,8 +19,6 @@ function Solution({
 }: SolutionProps) {
   const { handleModalOpen } = useModalContext();
 
-  console.log(srcSet);
-
   const handleClick = () => {
     handleModalOpen();
     onImageClick();

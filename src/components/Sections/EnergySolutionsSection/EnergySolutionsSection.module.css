@@ -17,11 +17,12 @@
 @media (max-width: 64em) {
   .energySolutions {
     grid-template-columns: repeat(1, 1fr);
-    max-width: 70%;
+    max-width: 55%;
   }
+}
 
-  .imageContainer {
-    width: 100%;
-    height: 20rem;
+@media (max-width: 30em) {
+  .energySolutions {
+    max-width: 55%;
   }
 }

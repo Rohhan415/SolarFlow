@@ -3,11 +3,14 @@
   z-index: 30;
   top: 0;
   left: 50%;
+  right: 0;
+  top: 0;
   transform: translateX(-50%);
+  border: none;
   align-items: center;
   transition: all 0.4s ease-in-out;
   color: white;
-  width: 100%;
+  width: 110%;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0);
   text-transform: uppercase;
@@ -16,6 +19,7 @@
 .navigationBar,
 .navigationBarMove {
   display: inline-flex;
+
   flex-grow: 1;
   justify-content: space-between;
   padding: 0 20rem;
@@ -95,12 +99,13 @@
 }
 
 .mobileNavList {
+  font-size: 4rem;
   position: fixed;
   z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 6rem;
   flex-direction: column;
 }
 .modalContainer {
@@ -114,7 +119,7 @@
   height: 100vh;
   width: 100%;
   font-size: 2.1rem;
-  background-color: var(--dark-blue);
+  background-color: var(--navy-blue);
   backdrop-filter: blur(20px);
   opacity: 0.9;
   transform: translateX(100%);
@@ -166,20 +171,8 @@
     display: none;
   }
 
-  /* .NavList {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    gap: 5rem;
-    width: 40%;
-    height: 100%;
-    transition: all 0.3s ease-in-out;
-  } */
-
   .NavList.hidden {
-    transform: translateX(-100%); /* Slide out to the left */
+    transform: translateX(-100%);
   }
 }
 
