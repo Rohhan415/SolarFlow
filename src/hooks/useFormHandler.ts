@@ -40,52 +40,53 @@ export const useFormHandler = (accessURL: string) => {
 
   // Async function that is responsible for sending the form
   const onSubmit: SubmitHandler<FieldValues> = async (data, e) => {
-    setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
+    try {
+      setFormState((prevState) => ({ ...prevState, isSubmitted: true }));
 
-    const formData = new FormData(e?.target as HTMLFormElement);
+      const formData = new FormData(e?.target as HTMLFormElement);
 
-    formData.append("access_key", data.accessKey);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+      formData.append("access_key", data.accessKey);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
 
-    await fetch(accessURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    })
-      .then(async (response) => {
-        const json = await response.json();
-        if (json.success) {
-          setFormState((prevState) => ({
-            ...prevState,
-            isSuccess: true,
-            isSubmitted: false,
-            message: json.message,
-          }));
+      const response = await fetch(accessURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
 
-          reset();
-        } else {
-          setFormState((prevState) => ({
-            ...prevState,
-            message: json.message,
-            isSuccess: false,
-          }));
-        }
-      })
-      .catch((error) => {
+      const jsonResponse = await response.json();
+
+      if (jsonResponse.success) {
         setFormState((prevState) => ({
           ...prevState,
-          isSuccess: false,
+          isSuccess: true,
           isSubmitted: false,
-          message:
-            "Błąd klienta, po więcej informacji skontaktuj się z administratorem.",
+          message: jsonResponse.message,
         }));
-        // console log for development, delete before production
-        console.log(error);
-      });
+
+        reset();
+      } else {
+        setFormState((prevState) => ({
+          ...prevState,
+          message: jsonResponse.message,
+          isSuccess: false,
+        }));
+      }
+    } catch (error) {
+      setFormState((prevState) => ({
+        ...prevState,
+        isSuccess: false,
+        isSubmitted: false,
+        message:
+          "Błąd klienta, po więcej informacji skontaktuj się z administratorem.",
+      }));
+      // console log for development, delete before production
+      console.log(error);
+    }
   };
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {

@@ -7,9 +7,37 @@
  Desktop: 1200px - 1440px
  Large Desktop: 1600px+ */
 
+:root {
+  --lightest-green: #d9ed92;
+  --light-green: #b5e48c;
+  --pale-green: #83c341;
+  --medium-green: #76c893;
+  --strong-green: #52b69a;
+  --teal: #34a0a4;
+  --deep-blue: #168aad;
+  --darker-blue: #1a759f;
+  --dark-blue: #032947;
+  --navy-blue: #184e77;
+  --text-black: #333;
+  --text-white: #eee;
+  --steps-blue: #1e6091;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+
+@media (max-width: 77em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 53.125em) {
+  html {
+    font-size: 40%;
+  }
 }
 
 *,
@@ -29,13 +57,7 @@ body {
   color: var(--text-white);
 }
 
-*:focus:not(.focus-visible) {
-  box-shadow: 0 0 0 0.1rem var(--pale-green);
-  border-radius: 2px;
-  outline: none;
-}
-
-*.focus-visible {
+*:focus-visible {
   box-shadow: 0 0 0 0.1rem var(--pale-green);
   border-radius: 2px;
   outline: none;
@@ -44,32 +66,4 @@ body {
 #root {
   width: 100%;
   height: 100%;
-}
-
-:root {
-  --lightest-green: #d9ed92;
-  --light-green: #b5e48c;
-  --pale-green: #83c341;
-  --medium-green: #76c893;
-  --strong-green: #52b69a;
-  --teal: #34a0a4;
-  --deep-blue: #168aad;
-  --darker-blue: #1a759f;
-  --dark-blue: #032947;
-  --navy-blue: #184e77;
-  --text-black: #333;
-  --text-white: #eee;
-  --steps-blue: #1e6091;
-}
-
-@media (max-width: 77em) {
-  html {
-    font-size: 50%;
-  }
-}
-
-@media (max-width: 53.125em) {
-  html {
-    font-size: 40%;
-  }
 }

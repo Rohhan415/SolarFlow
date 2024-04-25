@@ -1,5 +1,4 @@
 import styles from "./alert.module.css";
-import button from "../Form/form.module.css";
 
 export const Alert = ({
   isSuccess,
@@ -34,7 +33,7 @@ export const Alert = ({
         {title}
       </h3>
       <p className={styles.description}>{description}</p>
-      <button className={button.button} onClick={reset}>
+      <button className={styles.button} onClick={reset}>
         {buttonText}
       </button>
     </div>

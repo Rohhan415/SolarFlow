@@ -61,6 +61,11 @@
   z-index: 2;
 }
 
+.imageButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .solutionDescriptionContainer {
   padding: 2rem;
   margin-top: 3rem;
